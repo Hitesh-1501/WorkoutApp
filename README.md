@@ -1,8 +1,8 @@
-#WorkoutApp
+# WorkoutApp
 
-## Features of App: - Adding Workout Animation , Timer And Sound , USE Room Databse to show history , App sharing feature and BMI Calculator to calculate yor BMI and many more.
+### Features of App: - Adding Workout Animation , Timer And Sound , USE Room Databse to show history , App sharing feature and BMI Calculator to calculate yor BMI and many more.
 
-##Output
+# #Output
 
 ![Screenshot_2025-01-03-19-00-04-893_com example a7minutesworkout 1](https://github.com/user-attachments/assets/e2781434-1ea5-45a2-b623-05d2d30b4ff3)
 ![Screenshot_2025-01-03-19-01-41-733_com example a7minutesworkout 1](https://github.com/user-attachments/assets/24d90c27-6c41-4da5-906b-83a5a6725f9d)
