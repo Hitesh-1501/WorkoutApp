@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme._7MinutesWorkout" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme._7MinutesWorkout" parent="Theme.MaterialComponents.DayNight.NoActionBar"/>
+
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.MaterialComponents.ActionBar">
+        <item name="colorControlNormal">@color/toolbar_control_control_normal</item>
+    </style>
+
+    <style name="TEXTCOLOR">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="dialogText">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    
+
+
+</resources>
