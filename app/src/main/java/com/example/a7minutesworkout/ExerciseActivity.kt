@@ -47,10 +47,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         binding = ActivityExerciseBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         // Disable screenshots and screen recording for this activity
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_SECURE,
-            WindowManager.LayoutParams.FLAG_SECURE
-        )
+
 
         // then set support action bar and get toolBarExcercise using the binding
         //variable
