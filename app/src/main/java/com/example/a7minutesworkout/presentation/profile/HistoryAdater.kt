@@ -1,4 +1,4 @@
-package com.example.a7minutesworkout
+package com.example.a7minutesworkout.presentation.profile
 
 import android.annotation.SuppressLint
 import android.graphics.Color

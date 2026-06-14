@@ -5,7 +5,7 @@
     android:padding="@dimen/main_screeen_main_layout_padding"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".presentation.dashboard.MainActivity">
 
     <ImageView
         android:id="@+id/myImageView"

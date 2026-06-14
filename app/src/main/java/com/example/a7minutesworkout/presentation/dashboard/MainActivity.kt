@@ -1,16 +1,19 @@
-package com.example.a7minutesworkout
+package com.example.a7minutesworkout.presentation.dashboard
 
+import android.R
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
-import com.airbnb.lottie.BuildConfig
+import com.example.a7minutesworkout.presentation.profile.BMIActivity
 import com.example.a7minutesworkout.databinding.ActivityMainBinding
+import com.example.a7minutesworkout.presentation.profile.HistoryActivity
+import com.example.a7minutesworkout.presentation.workout.ExerciseActivity
 
 class MainActivity : AppCompatActivity() {
-    private var binding:ActivityMainBinding? = null
+    private var binding: ActivityMainBinding? = null
     private var directDownloadLink : String = "https://drive.google.com/file/d/1jpRUFgtFIC9i1rL4y6a6c8V2pRh65B2q/view?usp=sharing"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         binding?.tvShare?.visibility = View.INVISIBLE
 
         // Load the fade-in animation (you can create custom animations as needed)
-        val fadeInAnimation = AnimationUtils.loadAnimation(this, android.R.anim.fade_in)
+        val fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
         fadeInAnimation.duration = 2000 // Set duration for the animation
 
         // Start animation on the ImageView
@@ -65,10 +68,10 @@ class MainActivity : AppCompatActivity() {
                 binding?.tvShare?.visibility = View.VISIBLE
 
                 // You can also animate the showing of these views if needed
-                binding?.flStart?.startAnimation(AnimationUtils.loadAnimation(this@MainActivity, android.R.anim.fade_in))
-                binding?.flBMI?.startAnimation(AnimationUtils.loadAnimation(this@MainActivity, android.R.anim.fade_in))
-                binding?.flHistory?.startAnimation(AnimationUtils.loadAnimation(this@MainActivity, android.R.anim.fade_in))
-                binding?.flShare?.startAnimation(AnimationUtils.loadAnimation(this@MainActivity, android.R.anim.fade_in))
+                binding?.flStart?.startAnimation(AnimationUtils.loadAnimation(this@MainActivity, R.anim.fade_in))
+                binding?.flBMI?.startAnimation(AnimationUtils.loadAnimation(this@MainActivity, R.anim.fade_in))
+                binding?.flHistory?.startAnimation(AnimationUtils.loadAnimation(this@MainActivity, R.anim.fade_in))
+                binding?.flShare?.startAnimation(AnimationUtils.loadAnimation(this@MainActivity, R.anim.fade_in))
             }
 
             override fun onAnimationRepeat(animation: Animation?) {

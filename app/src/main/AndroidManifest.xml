@@ -12,7 +12,7 @@
 
     <application
         android:allowBackup="true"
-        android:name=".WorkOutApplication"
+        android:name=".data.local.WorkOutApplication"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher_round"
@@ -22,19 +22,19 @@
         android:theme="@style/Theme._7MinutesWorkout"
         tools:targetApi="31">
         <activity
-            android:name=".HistoryActivity"
+            android:name=".presentation.profile.HistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".BMIActivity"
+            android:name=".presentation.profile.BMIActivity"
             android:exported="false" />
         <activity
-            android:name=".FinishActivity"
+            android:name=".presentation.dashboard.FinishActivity"
             android:exported="false" />
         <activity
-            android:name=".ExerciseActivity"
+            android:name=".presentation.workout.ExerciseActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.dashboard.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

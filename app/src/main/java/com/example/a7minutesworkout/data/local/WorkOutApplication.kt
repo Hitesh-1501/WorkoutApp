@@ -1,9 +1,8 @@
-package com.example.a7minutesworkout
+package com.example.a7minutesworkout.data.local
 
 import android.app.Application
 
 class WorkOutApplication : Application() {
-    //create the application class and initialize the database
     val db by lazy {
         HistoryDatabase.getInstance(this)
     }

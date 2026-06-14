@@ -1,6 +1,6 @@
-package com.example.a7minutesworkout
+package com.example.a7minutesworkout.domain.model
 
-import kotlin.math.E
+import com.example.a7minutesworkout.R
 
 
 object Constants {

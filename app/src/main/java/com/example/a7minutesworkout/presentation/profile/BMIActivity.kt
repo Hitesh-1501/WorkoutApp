@@ -1,10 +1,10 @@
-package com.example.a7minutesworkout
+package com.example.a7minutesworkout.presentation.profile
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.a7minutesworkout.R
 import com.example.a7minutesworkout.databinding.ActivityBmiBinding
 import java.math.BigDecimal
 import java.math.RoundingMode
@@ -154,7 +154,7 @@ class BMIActivity : AppCompatActivity() {
                 val bmi = weightValue / (heightValue*heightValue)
                 displayBMIResult(bmi)
             }else{
-                Toast.makeText(this@BMIActivity,"please enter valid values",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@BMIActivity,"please enter valid values", Toast.LENGTH_SHORT).show()
             }
         }else{
             // The values are validated.
