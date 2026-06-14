@@ -16,4 +16,13 @@
         <item name="android:statusBarColor">@color/light_background</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
+
+    <style name="Theme.AuraFitAI.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/dark_background</item>
+
+        <item name="windowSplashScreenAnimatedIcon">@drawable/aurafit_logo</item>
+
+        <item name="postSplashScreenTheme">@style/Theme.AuraFitAI</item>
+    </style>
+
 </resources>
