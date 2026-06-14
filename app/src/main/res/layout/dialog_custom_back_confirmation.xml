@@ -12,7 +12,6 @@
         android:textSize="18sp"
         android:text="Are you sure?"
         android:textStyle="bold"
-        style="@style/dialogText"
         android:gravity="center"
         android:layout_marginTop="15dp"/>
 
@@ -24,7 +23,7 @@
         android:text="This will stop your workout. You ve come this far,\n are you sure you want to quit?"
         android:gravity="center"
         android:textSize="16sp"
-        style="@style/dialogText"/>
+        />
     
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,10 +39,10 @@
             android:layout_weight="1"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/athletic_emerald_light"
             android:gravity="center"
             android:text="YES"
-            android:textColor="@color/white"
+            android:textColor="@color/light_background"
             android:textSize="16sp"/>
 
         <Button
@@ -53,10 +52,10 @@
             android:layout_weight="1"
             android:layout_marginEnd="10dp"
             android:layout_marginStart="10dp"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/athletic_emerald_light"
             android:gravity="center"
             android:text="NO"
-            android:textColor="@color/white"
+            android:textColor="@color/light_background"
             android:textSize="16sp"/>
 
 

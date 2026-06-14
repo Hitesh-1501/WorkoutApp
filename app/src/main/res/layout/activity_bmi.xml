@@ -5,16 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@color/light_background"
     tools:context=".presentation.profile.BMIActivity">
     
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_bmi_activity"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/white"
-        android:theme="@style/ToolbarTheme"
-        app:titleTextColor="@color/colorAccent"/>
+        android:background="@color/light_background"
+        app:titleTextColor="@color/athletic_emerald_light"/>
 
     <RadioGroup
         android:id="@+id/rgUnits"
@@ -58,8 +57,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxStrokeColor="@color/colorAccent"
-        app:hintTextColor="@color/colorAccent"
+        app:boxStrokeColor="@color/athletic_emerald_light"
+        app:hintTextColor="@color/athletic_emerald_light"
         android:hint="WEIGHT (in kg)"
         android:textColorHint="@color/black"
         android:layout_margin="10dp"
@@ -78,8 +77,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilUsMetricUnitWeight"
         android:layout_margin="10dp"
-        app:boxStrokeColor="@color/colorAccent"
-        app:hintTextColor="@color/colorAccent"
+        app:boxStrokeColor="@color/athletic_emerald_light"
+        app:hintTextColor="@color/athletic_emerald_light"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:textColorHint="@color/black"
         android:layout_width="match_parent"
@@ -108,8 +107,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.50"
-            app:boxStrokeColor="@color/colorAccent"
-            app:hintTextColor="@color/colorAccent"
+            app:boxStrokeColor="@color/athletic_emerald_light"
+            app:hintTextColor="@color/athletic_emerald_light"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_marginTop="10dp"
             android:textColorHint="@color/black"
@@ -136,8 +135,8 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilMetricUsUnitHeightInch"
-            app:boxStrokeColor="@color/colorAccent"
-            app:hintTextColor="@color/colorAccent"
+            app:boxStrokeColor="@color/athletic_emerald_light"
+            app:hintTextColor="@color/athletic_emerald_light"
             android:visibility="gone"
             tools:visibility="visible"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -168,8 +167,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxStrokeColor="@color/colorAccent"
-        app:hintTextColor="@color/colorAccent"
+        app:boxStrokeColor = "@color/athletic_emerald_light"
+        app:hintTextColor="@color/athletic_emerald_light"
         android:layout_margin="10dp"
         android:textColorHint="@color/black"
         >
@@ -246,7 +245,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
-        android:backgroundTint="@color/colorAccent"
+        android:backgroundTint="@color/athletic_emerald_light"
         android:text="CALCULATE"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />

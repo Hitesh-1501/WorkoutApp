@@ -10,17 +10,15 @@
         android:id="@+id/toolbarExercise"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/white"
-        android:theme="@style/ToolbarTheme"
         app:layout_constraintTop_toTopOf="parent"
-        app:titleTextColor="@color/colorPrimary" />
+        />
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="GET READY FOR "
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/athletic_emerald_light"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/flRestView"
@@ -63,7 +61,7 @@
                android:id="@+id/tvTimer"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:textColor="@color/white"
+               android:textColor="@color/light_background"
                android:textSize="25sp"
                android:textStyle="bold"
                tools:text="10"/>
@@ -76,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="UPCOMING EXERCISE: "
-        style="@style/TEXTCOLOR"
+        android:textColorHint="@color/light_background"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +87,7 @@
         android:id="@+id/tvUpcomingExerciseName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/TEXTCOLOR"
+
         android:textSize="16sp"
         android:textStyle="bold"
         android:visibility="gone"
@@ -115,7 +113,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ExerciseName"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/athletic_emerald_light"
         android:textSize="22sp"
         android:textStyle="bold"
         android:visibility="gone"
@@ -159,7 +157,7 @@
                 android:id="@+id/tvTimerExercise"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="@color/light_background"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 tools:text="30"/>
