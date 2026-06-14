@@ -1,19 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.AuraFitAI" parent="Theme.Material3.Dark.NoActionBar">
-        <item name="colorPrimary">@color/electric_lime</item>
-        <item name="colorOnPrimary">@color/dark_background</item>
-        <item name="colorPrimaryContainer">@color/electric_lime_dark</item>
+    <style name="Theme.AuraFitAI" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/athletic_emerald</item>
+        <item name="colorOnPrimary">@color/light_background</item>
+        <item name="colorPrimaryContainer">@color/athletic_emerald_light</item>
 
-        <item name="android:windowBackground">@color/dark_background</item>
-        <item name="colorSurface">@color/dark_surface</item>
-        <item name="colorSurfaceVariant">@color/dark_surface_variant</item>
+        <item name="android:windowBackground">@color/light_background</item>
+        <item name="colorSurface">@color/light_surface</item>
+        <item name="colorSurfaceVariant">@color/light_surface_variant</item>
 
-        <item name="colorOnBackground">@color/dark_on_background</item>
-        <item name="colorOnSurface">@color/dark_on_surface</item>
-        <item name="colorOnSurfaceVariant">@color/dark_on_surface_variant</item>
+        <item name="colorOnBackground">@color/light_on_background</item>
+        <item name="colorOnSurface">@color/light_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/light_on_surface_variant</item>
 
-        <item name="android:statusBarColor">@color/dark_background</item>
-        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/light_background</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>
