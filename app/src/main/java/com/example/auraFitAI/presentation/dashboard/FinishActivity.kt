@@ -1,13 +1,13 @@
-package com.example.a7minutesworkout.presentation.dashboard
+package com.example.auraFitAI.presentation.dashboard
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.example.a7minutesworkout.data.local.WorkOutApplication
-import com.example.a7minutesworkout.data.local.HistoryDao
-import com.example.a7minutesworkout.data.local.HistoryEntity
-import com.example.a7minutesworkout.databinding.ActivityFinishBinding
+import com.example.auraFitAI.data.local.WorkOutApplication
+import com.example.auraFitAI.data.local.HistoryDao
+import com.example.auraFitAI.data.local.HistoryEntity
+import com.example.auraFitAI.databinding.ActivityFinishBinding
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Calendar

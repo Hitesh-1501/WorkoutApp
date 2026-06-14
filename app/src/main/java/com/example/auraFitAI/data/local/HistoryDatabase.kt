@@ -1,4 +1,4 @@
-package com.example.a7minutesworkout.data.local
+package com.example.auraFitAI.data.local
 
 import android.content.Context
 import androidx.room.Database

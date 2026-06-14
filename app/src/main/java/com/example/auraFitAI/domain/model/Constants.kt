@@ -1,6 +1,6 @@
-package com.example.a7minutesworkout.domain.model
+package com.example.auraFitAI.domain.model
 
-import com.example.a7minutesworkout.R
+import com.example.auraFitAI.R
 
 
 object Constants {

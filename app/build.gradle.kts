@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.a7minutesworkout"
+    namespace = "com.example.auraFitAI"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.a7minutesworkout"
+        applicationId = "com.example.auraFitAI"
         minSdk = 25
         targetSdk = 34
         versionCode = 1
@@ -42,13 +42,10 @@ android {
 dependencies {
     val room_version = "2.6.1"
     val activityVersion = "1.9.2"
-    // Room and Lifecycle dependencies
     implementation("androidx.room:room-runtime:$room_version")
     kapt("androidx.room:room-compiler:$room_version")
-    //kotlin extensions for coroutine support with room
     implementation("androidx.room:room-ktx:$room_version")
 
-    //kotlin extension for coroutine support with activities
     implementation("androidx.activity:activity-ktx:$activityVersion")
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")

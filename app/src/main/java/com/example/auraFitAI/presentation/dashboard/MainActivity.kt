@@ -1,4 +1,4 @@
-package com.example.a7minutesworkout.presentation.dashboard
+package com.example.auraFitAI.presentation.dashboard
 
 import android.R
 import android.content.Intent
@@ -7,10 +7,10 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
-import com.example.a7minutesworkout.presentation.profile.BMIActivity
-import com.example.a7minutesworkout.databinding.ActivityMainBinding
-import com.example.a7minutesworkout.presentation.profile.HistoryActivity
-import com.example.a7minutesworkout.presentation.workout.ExerciseActivity
+import com.example.auraFitAI.presentation.profile.BMIActivity
+import com.example.auraFitAI.databinding.ActivityMainBinding
+import com.example.auraFitAI.presentation.profile.HistoryActivity
+import com.example.auraFitAI.presentation.workout.ExerciseActivity
 
 class MainActivity : AppCompatActivity() {
     private var binding: ActivityMainBinding? = null

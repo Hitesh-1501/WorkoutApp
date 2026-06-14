@@ -1,11 +1,11 @@
-package com.example.a7minutesworkout.presentation.profile
+package com.example.auraFitAI.presentation.profile
 
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.a7minutesworkout.R
-import com.example.a7minutesworkout.databinding.ActivityBmiBinding
+import com.example.auraFitAI.R
+import com.example.auraFitAI.databinding.ActivityBmiBinding
 import java.math.BigDecimal
 import java.math.RoundingMode
 

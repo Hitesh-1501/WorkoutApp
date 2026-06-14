@@ -1,4 +1,4 @@
-package com.example.a7minutesworkout.presentation.workout
+package com.example.auraFitAI.presentation.workout
 
 import android.annotation.SuppressLint
 import android.app.Dialog
@@ -13,12 +13,12 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.a7minutesworkout.domain.model.Constants
-import com.example.a7minutesworkout.domain.model.ExerciseModel
-import com.example.a7minutesworkout.presentation.dashboard.FinishActivity
-import com.example.a7minutesworkout.R
-import com.example.a7minutesworkout.databinding.ActivityExerciseBinding
-import com.example.a7minutesworkout.databinding.DialogCustomBackConfirmationBinding
+import com.example.auraFitAI.domain.model.Constants
+import com.example.auraFitAI.domain.model.ExerciseModel
+import com.example.auraFitAI.presentation.dashboard.FinishActivity
+import com.example.auraFitAI.R
+import com.example.auraFitAI.databinding.ActivityExerciseBinding
+import com.example.auraFitAI.databinding.DialogCustomBackConfirmationBinding
 import java.lang.Exception
 import java.util.Locale
 

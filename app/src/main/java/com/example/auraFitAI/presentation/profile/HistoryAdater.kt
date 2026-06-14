@@ -1,11 +1,11 @@
-package com.example.a7minutesworkout.presentation.profile
+package com.example.auraFitAI.presentation.profile
 
 import android.annotation.SuppressLint
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.a7minutesworkout.databinding.ItemHistoryRowBinding
+import com.example.auraFitAI.databinding.ItemHistoryRowBinding
 
 class HistoryAdater(private val items : ArrayList<String>) : RecyclerView.Adapter<HistoryAdater.ViewHolder>() {
     class ViewHolder(binding : ItemHistoryRowBinding) : RecyclerView.ViewHolder(binding.root){

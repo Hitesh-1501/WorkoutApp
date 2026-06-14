@@ -1,4 +1,4 @@
-package com.example.a7minutesworkout.data.local
+package com.example.auraFitAI.data.local
 
 import androidx.room.Dao
 import androidx.room.Insert

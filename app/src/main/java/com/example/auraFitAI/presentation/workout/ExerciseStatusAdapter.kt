@@ -1,13 +1,13 @@
-package com.example.a7minutesworkout.presentation.workout
+package com.example.auraFitAI.presentation.workout
 
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.a7minutesworkout.domain.model.ExerciseModel
-import com.example.a7minutesworkout.R
-import com.example.a7minutesworkout.databinding.ItemExerciseStatusBinding
+import com.example.auraFitAI.domain.model.ExerciseModel
+import com.example.auraFitAI.R
+import com.example.auraFitAI.databinding.ItemExerciseStatusBinding
 
 class ExerciseStatusAdapter(val items : ArrayList<ExerciseModel>)
     : RecyclerView.Adapter<ExerciseStatusAdapter.ViewHolder>(){

@@ -1,4 +1,4 @@
-package com.example.a7minutesworkout
+package com.example.auraFitAI
 
 import org.junit.Test
 

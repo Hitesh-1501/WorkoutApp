@@ -1,4 +1,4 @@
-package com.example.a7minutesworkout.domain.model
+package com.example.auraFitAI.domain.model
 
 class ExerciseModel(
     private var id : Int,
