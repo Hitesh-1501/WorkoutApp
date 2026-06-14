@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    
-    <color name="colorPrimary">#B2212121</color>
-    <color name="colorPrimaryDark">#B2212121</color>
-    <color name="colorAccent">#008F24</color>
-    <color name="lightGrey">#C4C4C4</color>
-    <color name="toolbar_control_control_normal">#000000</color>
-    
-    
+    <color name="electric_lime">#D0FD3E</color>
+    <color name="electric_lime_dark">#A2C91E</color>
+    <color name="athletic_emerald">#1B5E20</color>
+    <color name="athletic_emerald_light">#4C8C4A</color>
+
+    <color name="dark_background">#0D0E12</color>
+    <color name="dark_surface">#161820</color>
+    <color name="dark_surface_variant">#222531</color>
+    <color name="dark_on_background">#FFFFFF</color>
+    <color name="dark_on_surface">#E2E2E6</color>
+    <color name="dark_on_surface_variant">#A7A9B2</color>
+
+    <color name="light_background">#FFFFFF</color>
+    <color name="light_surface">#F4F6F9</color>
+    <color name="light_surface_variant">#E9ECF0</color>
+    <color name="light_on_background">#0D0E12</color>
+    <color name="light_on_surface">#1A1C24</color>
+    <color name="light_on_surface_variant">#5D606E</color>
+
+    <color name="error_red">#FF3333</color>
+    <color name="glass_white_alpha10">#1AFFFFFF</color>
+    <color name="glass_white_alpha20">#33FFFFFF</color>
 </resources>

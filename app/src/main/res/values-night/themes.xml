@@ -1,18 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme._7MinutesWorkout" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+    <style name="Theme.AuraFitAI" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/electric_lime</item>
+        <item name="colorOnPrimary">@color/dark_background</item>
+        <item name="colorPrimaryContainer">@color/electric_lime_dark</item>
+
+        <item name="android:windowBackground">@color/dark_background</item>
+        <item name="colorSurface">@color/dark_surface</item>
+        <item name="colorSurfaceVariant">@color/dark_surface_variant</item>
+
+        <item name="colorOnBackground">@color/dark_on_background</item>
+        <item name="colorOnSurface">@color/dark_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/dark_on_surface_variant</item>
+
+        <item name="android:statusBarColor">@color/dark_background</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
-
-    <style name="TEXTCOLOR">
-        <item name="android:textColor">@color/white</item>
-    </style>
-
-    <style name="dialogText">
-        <item name="android:textColor">@color/white</item>
-    </style>
-
-
-
 </resources>
