@@ -1,7 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
+    id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
 }
 
@@ -44,7 +44,7 @@ dependencies {
     val room_version = "2.6.1"
     val activityVersion = "1.9.2"
     implementation("androidx.room:room-runtime:$room_version")
-    kapt("androidx.room:room-compiler:$room_version")
+    ksp("androidx.room:room-compiler:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
 
     implementation("androidx.activity:activity-ktx:$activityVersion")
@@ -60,5 +60,5 @@ dependencies {
     implementation("com.airbnb.android:lottie:6.0.0")
 
     implementation("com.google.dagger:hilt-android:2.51")
-    kapt("com.google.dagger:hilt-compiler:2.51")
+    ksp("com.google.dagger:hilt-compiler:2.51")
 }
