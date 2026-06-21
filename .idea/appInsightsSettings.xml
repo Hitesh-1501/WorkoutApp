@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.auraFitAI" />
+                  <option name="mobileSdkAppId" value="1:352231562215:android:ba37698d49cda17d8efb42" />
+                  <option name="projectId" value="aurafit-2ebb0" />
+                  <option name="projectNumber" value="352231562215" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
