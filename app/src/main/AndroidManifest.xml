@@ -33,6 +33,7 @@
         <activity
             android:name=".presentation.workout.ExerciseActivity"
             android:exported="false" />
+
         <activity
             android:name=".presentation.dashboard.MainActivity"
             android:exported="true"
