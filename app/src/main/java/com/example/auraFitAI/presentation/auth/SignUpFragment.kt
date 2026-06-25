@@ -24,8 +24,10 @@ class SignUpFragment: Fragment(R.layout.fragment_sign_up) {
             if (name.isEmpty() || email.isEmpty() || password.isEmpty()){
                 Toast.makeText(requireContext(), "Please complete all fields", Toast.LENGTH_SHORT).show()
             } else{
-
+                // Future Hook: Store profile data directly inside Firestore users collection
             }
         }
     }
+
+
 }
