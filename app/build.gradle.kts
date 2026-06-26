@@ -64,5 +64,6 @@ dependencies {
     implementation("com.airbnb.android:lottie:6.0.0")
 
     implementation("com.google.dagger:hilt-android:2.51")
+    implementation("androidx.fragment:fragment-ktx:1.8.9")
     ksp("com.google.dagger:hilt-compiler:2.51")
 }
