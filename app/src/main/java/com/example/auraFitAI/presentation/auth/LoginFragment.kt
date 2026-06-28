@@ -1,5 +1,6 @@
 package com.example.auraFitAI.presentation.auth
 
+import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.view.View
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -95,7 +97,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         if (startIdx != -1) {
             // Apply matching Brand Teal Color highlight
             spannableString.setSpan(
-                ForegroundColorSpan(Color.parseColor("#00C99E")),
+                ForegroundColorSpan(ContextCompat.getColor(requireContext(), R.color.brand_teal_text)),
                 startIdx,
                 endIdx,
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
