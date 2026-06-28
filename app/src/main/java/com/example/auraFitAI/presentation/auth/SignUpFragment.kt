@@ -1,8 +1,14 @@
 package com.example.auraFitAI.presentation.auth
 
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import android.view.View
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -22,7 +28,7 @@ class SignUpFragment: Fragment(R.layout.fragment_sign_up) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        setupSignInNavigationText()
         setupListeners()
         observeViewModelState()
     }
@@ -86,5 +92,35 @@ class SignUpFragment: Fragment(R.layout.fragment_sign_up) {
     private fun toggleLoadingViews(isLoading: Boolean){
         binding.pbSignUpLoading.visibility = if (isLoading) View.VISIBLE else View.GONE
         binding.btnSignUp.isEnabled = !isLoading
+    }
+
+    private fun setupSignInNavigationText() {
+        val fullText = "Already have an account? Sign In"
+        val spannableString = SpannableString(fullText)
+
+        val startIdx = fullText.indexOf("Sign In")
+        val endIdx = startIdx + "Sign In".length
+
+        if (startIdx != -1) {
+            spannableString.setSpan(
+                ForegroundColorSpan(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.brand_teal_text
+                    )
+                ),
+                startIdx,
+                endIdx,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            spannableString.setSpan(
+                StyleSpan(Typeface.BOLD),
+                startIdx,
+                endIdx,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+        }
+
+        binding.tvNavigateToLogin.text = spannableString
     }
 }
