@@ -23,4 +23,5 @@
     <color name="error_red">#FF3333</color>
     <color name="glass_white_alpha10">#1AFFFFFF</color>
     <color name="glass_white_alpha20">#33FFFFFF</color>
+    <color name="textColor">#1A1C24</color>
 </resources>
