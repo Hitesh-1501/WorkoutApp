@@ -1,6 +1,12 @@
 package com.example.auraFitAI.presentation.auth
 
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -22,6 +28,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupSignupNavigationText()
         setupListeners()
         observeViewModelState()
     }
@@ -76,5 +83,32 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     private fun toggleLoadingViews(isLoading: Boolean) {
         binding.pbLoading.visibility = if (isLoading) View.VISIBLE else View.GONE
         binding.btnLogin.isEnabled = !isLoading
+    }
+
+    private fun setupSignupNavigationText() {
+        val fullText = "Don't have an account? Sign Up"
+        val spannableString = SpannableString(fullText)
+
+        val startIdx = fullText.indexOf("Sign Up")
+        val endIdx = startIdx + "Sign Up".length
+
+        if (startIdx != -1) {
+            // Apply matching Brand Teal Color highlight
+            spannableString.setSpan(
+                ForegroundColorSpan(Color.parseColor("#00C99E")),
+                startIdx,
+                endIdx,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            // Inject explicit Bold weight parameter matching image elements
+            spannableString.setSpan(
+                StyleSpan(Typeface.BOLD),
+                startIdx,
+                endIdx,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+        }
+
+        binding.tvNavigateToSignUp.text = spannableString
     }
 }

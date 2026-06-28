@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="electric_lime">#D0FD3E</color>
     <color name="electric_lime_dark">#A2C91E</color>
     <color name="athletic_emerald">#1B5E20</color>
     <color name="athletic_emerald_light">#4C8C4A</color>
+
+
+    <color name="gradient_auth_start">#02B290</color>
+    <color name="gradient_auth_center">#00A86B</color>
+    <color name="gradient_auth_end">#008A57</color>
+    <color name="gradient_btn_start">#00C99E</color>
+    <color name="gradient_btn_end">#009675</color>
+
+    <color name="borderStroke">#E2E8F0</color>
+    <color name="input_hint_color">#94A3B8</color>
+    <color name="input_icon_tint">#8A95A5</color>
 
     <color name="dark_background">#0D0E12</color>
     <color name="dark_surface">#161820</color>
@@ -23,5 +35,9 @@
     <color name="error_red">#FF3333</color>
     <color name="glass_white_alpha10">#1AFFFFFF</color>
     <color name="glass_white_alpha20">#33FFFFFF</color>
-    <color name="textColor">#1A1C24</color>
+
+    <color name="textColor">#1F2C3D</color>
+    <color name="textSecondary">#8A95A5</color>
+    <color name="brand_teal_text">#00C99E</color>
+
 </resources>
