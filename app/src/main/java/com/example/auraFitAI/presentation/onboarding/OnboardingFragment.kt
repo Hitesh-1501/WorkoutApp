@@ -1,4 +1,4 @@
-package com.example.auraFitAI.presentation.auth
+package com.example.auraFitAI.presentation.onboarding
 
 import android.os.Bundle
 import android.view.View
@@ -12,6 +12,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.FragmentOnboardingBinding
 import com.example.auraFitAI.domain.util.UiState
+import com.example.auraFitAI.presentation.auth.AuthViewModel
 import com.example.auraFitAI.presentation.home.HomeFragment
 import com.example.auraFitAI.presentation.util.viewBinding
 import kotlinx.coroutines.launch

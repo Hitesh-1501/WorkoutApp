@@ -8,8 +8,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.ActivityMainBinding
 import com.example.auraFitAI.presentation.auth.AuthViewModel
-import com.example.auraFitAI.presentation.auth.LoginFragment
-import com.example.auraFitAI.presentation.auth.WelcomeCarouselFragment
+import com.example.auraFitAI.presentation.onboarding.WelcomeCarouselFragment
 import com.example.auraFitAI.presentation.home.HomeFragment
 import dagger.hilt.android.AndroidEntryPoint
 

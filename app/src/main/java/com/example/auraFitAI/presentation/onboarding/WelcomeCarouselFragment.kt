@@ -1,16 +1,16 @@
-package com.example.auraFitAI.presentation.auth
+package com.example.auraFitAI.presentation.onboarding
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.FragmentWelcomeCarouselBinding
+import com.example.auraFitAI.presentation.auth.LoginFragment
+import com.example.auraFitAI.presentation.auth.SignUpFragment
 import com.example.auraFitAI.presentation.util.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 

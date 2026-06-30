@@ -1,4 +1,4 @@
-package com.example.auraFitAI.presentation.auth
+package com.example.auraFitAI.presentation.onboarding
 
 import android.graphics.Typeface
 import android.text.SpannableString

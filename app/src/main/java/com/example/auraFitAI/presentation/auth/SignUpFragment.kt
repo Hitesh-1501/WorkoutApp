@@ -17,6 +17,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.FragmentSignUpBinding
 import com.example.auraFitAI.domain.util.UiState
+import com.example.auraFitAI.presentation.onboarding.OnboardingFragment
 import com.example.auraFitAI.presentation.util.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -49,7 +50,11 @@ class SignUpFragment: Fragment(R.layout.fragment_sign_up) {
         }
 
         binding.tvNavigateToLogin.setOnClickListener {
-            parentFragmentManager.popBackStack()
+            parentFragmentManager.beginTransaction()
+                .setCustomAnimations(R.anim.fade_in,0,0,0)
+                .replace(R.id.fragment_container, LoginFragment())
+                .addToBackStack(null)
+                .commit()
         }
     }
 

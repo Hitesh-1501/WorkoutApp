@@ -1,4 +1,4 @@
-package com.example.auraFitAI.presentation.auth
+package com.example.auraFitAI.presentation.onboarding
 
 data class OnboardingSlide(
     val imageRes: Int,
