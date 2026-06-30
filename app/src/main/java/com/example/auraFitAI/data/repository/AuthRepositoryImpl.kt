@@ -1,6 +1,6 @@
 package com.example.auraFitAI.data.repository
 
-import com.example.auraFitAI.domain.AuthRepository
+import com.example.auraFitAI.domain.repository.AuthRepository
 import com.example.auraFitAI.domain.util.NetworkResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore

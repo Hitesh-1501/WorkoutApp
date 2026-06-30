@@ -2,7 +2,7 @@ package com.example.auraFitAI.presentation.auth
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.auraFitAI.domain.AuthRepository
+import com.example.auraFitAI.domain.repository.AuthRepository
 import com.example.auraFitAI.domain.util.NetworkResult
 import com.example.auraFitAI.domain.util.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel

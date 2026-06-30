@@ -1,4 +1,4 @@
-package com.example.auraFitAI.domain
+package com.example.auraFitAI.domain.repository
 
 import com.example.auraFitAI.domain.util.NetworkResult
 
@@ -12,8 +12,8 @@ interface AuthRepository {
         email: String,
         password: String
     ): NetworkResult<String>
-    
-    
+
+
     suspend fun saveOnboardingData(
         uid: String,
         age: Int,

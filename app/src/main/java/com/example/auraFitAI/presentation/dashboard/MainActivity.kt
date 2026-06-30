@@ -9,6 +9,7 @@ import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.ActivityMainBinding
 import com.example.auraFitAI.presentation.auth.AuthViewModel
 import com.example.auraFitAI.presentation.auth.LoginFragment
+import com.example.auraFitAI.presentation.auth.WelcomeCarouselFragment
 import com.example.auraFitAI.presentation.home.HomeFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                     .commit()
             }else{
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, LoginFragment())
+                    .replace(R.id.fragment_container, WelcomeCarouselFragment())
                     .commit()
             }
         }
