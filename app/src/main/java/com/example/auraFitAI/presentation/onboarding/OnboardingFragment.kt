@@ -15,8 +15,9 @@ import com.example.auraFitAI.domain.util.UiState
 import com.example.auraFitAI.presentation.auth.AuthViewModel
 import com.example.auraFitAI.presentation.home.HomeFragment
 import com.example.auraFitAI.presentation.util.viewBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-
+@AndroidEntryPoint
 class OnboardingFragment: Fragment(R.layout.fragment_onboarding) {
     private val binding by viewBinding(FragmentOnboardingBinding::bind)
     private val viewModel: AuthViewModel by viewModels()
