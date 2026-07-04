@@ -46,6 +46,12 @@ class WelcomeCarouselFragment : Fragment(R.layout.fragment_welcome_carousel) {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 setCurrentIndicator(position)
+                if (position == slides.size -1){
+                    binding.llIndicators.visibility = View.GONE
+                }else{
+                    binding.llIndicators.visibility = View.VISIBLE
+                }
+
             }
         })
     }

@@ -57,6 +57,7 @@ class OnboardingAdapter(
 
             if(slide.isFinalSlide){
                 binding.tvSkip.visibility = View.GONE
+                binding.ivSlideLogo.visibility = View.GONE
                 binding.btnGetStarted.visibility = View.VISIBLE
                 binding.tvAlreadyHaveAccount.visibility = View.VISIBLE
 
@@ -72,6 +73,7 @@ class OnboardingAdapter(
                 binding.tvAlreadyHaveAccount.text = loginSpannable
             }else{
                 binding.tvSkip.visibility = View.VISIBLE
+                binding.ivSlideLogo.visibility = View.VISIBLE
                 binding.btnGetStarted.visibility = View.GONE
                 binding.tvAlreadyHaveAccount.visibility = View.GONE
             }
