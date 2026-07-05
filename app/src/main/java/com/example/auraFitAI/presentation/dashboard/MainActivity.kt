@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             if(viewModel.checkUserSession()){
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, HomeFragment())
+                    .replace(R.id.fragment_container, WelcomeCarouselFragment())
                     .commit()
             }else{
                 supportFragmentManager.beginTransaction()

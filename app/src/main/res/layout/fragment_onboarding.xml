@@ -33,19 +33,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvOnboardingTitle" />
 
+    <!-- Age Field -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilAge"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
+        android:hint="Age (Years)"
         app:boxCornerRadiusTopStart="12dp"
         app:boxCornerRadiusTopEnd="12dp"
         app:boxCornerRadiusBottomStart="12dp"
         app:boxCornerRadiusBottomEnd="12dp"
         app:boxStrokeColor="@color/borderStroke"
         app:boxStrokeWidth="1dp"
-        app:hintEnabled="false"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/input_hint_color"
         app:startIconDrawable="@drawable/ic_calender"
         app:startIconTint="@color/input_icon_tint"
         app:layout_constraintTop_toBottomOf="@id/tvOnboardingSubtitle">
@@ -54,28 +57,29 @@
             android:id="@+id/etAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Age (Years)"
             android:textColorHint="@color/input_hint_color"
             android:inputType="number"
-            android:paddingStart="12dp"
             android:paddingVertical="16dp"
             android:textColor="@color/textColor"
             android:textSize="15sp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Height Field -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilHeight"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:hint="Height (cm)"
         app:boxCornerRadiusTopStart="12dp"
         app:boxCornerRadiusTopEnd="12dp"
         app:boxCornerRadiusBottomStart="12dp"
         app:boxCornerRadiusBottomEnd="12dp"
         app:boxStrokeColor="@color/borderStroke"
         app:boxStrokeWidth="1dp"
-        app:hintEnabled="false"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/input_hint_color"
         app:startIconDrawable="@drawable/ic_height"
         app:startIconTint="@color/input_icon_tint"
         app:layout_constraintTop_toBottomOf="@id/tilAge">
@@ -84,28 +88,29 @@
             android:id="@+id/etHeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Height (cm)"
             android:textColorHint="@color/input_hint_color"
             android:inputType="numberDecimal"
-            android:paddingStart="12dp"
             android:paddingVertical="16dp"
             android:textColor="@color/textColor"
             android:textSize="15sp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Weight Field -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilWeight"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:hint="Weight (kg)"
         app:boxCornerRadiusTopStart="12dp"
         app:boxCornerRadiusTopEnd="12dp"
         app:boxCornerRadiusBottomStart="12dp"
         app:boxCornerRadiusBottomEnd="12dp"
         app:boxStrokeColor="@color/borderStroke"
         app:boxStrokeWidth="1dp"
-        app:hintEnabled="false"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/input_hint_color"
         app:startIconDrawable="@drawable/ic_weight"
         app:startIconTint="@color/input_icon_tint"
         app:layout_constraintTop_toBottomOf="@id/tilHeight">
@@ -114,28 +119,29 @@
             android:id="@+id/etWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Weight (kg)"
             android:textColorHint="@color/input_hint_color"
             android:inputType="numberDecimal"
-            android:paddingStart="12dp"
             android:paddingVertical="16dp"
             android:textColor="@color/textColor"
             android:textSize="15sp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Fitness Goal Dropdown -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilFitnessGoal"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:hint="Select Fitness Goal"
         app:boxCornerRadiusTopStart="12dp"
         app:boxCornerRadiusTopEnd="12dp"
         app:boxCornerRadiusBottomStart="12dp"
         app:boxCornerRadiusBottomEnd="12dp"
         app:boxStrokeColor="@color/borderStroke"
         app:boxStrokeWidth="1dp"
-        app:hintEnabled="false"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/input_hint_color"
         app:startIconDrawable="@drawable/ic_goal"
         app:startIconTint="@color/input_icon_tint"
         app:endIconTint="@color/input_icon_tint"
@@ -145,10 +151,8 @@
             android:id="@+id/actvFitnessGoal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Select Fitness Goal"
             android:textColorHint="@color/input_hint_color"
             android:inputType="none"
-            android:paddingStart="12dp"
             android:paddingVertical="16dp"
             android:textColor="@color/textColor"
             android:textSize="15sp" />

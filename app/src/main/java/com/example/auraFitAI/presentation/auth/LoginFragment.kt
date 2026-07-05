@@ -19,6 +19,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.FragmentLoginBinding
 import com.example.auraFitAI.domain.util.UiState
+import com.example.auraFitAI.presentation.onboarding.OnboardingFragment
 import com.example.auraFitAI.presentation.util.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -67,6 +68,11 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                         is UiState.Success -> {
                             toggleLoadingViews(isLoading = false)
                             Toast.makeText(requireContext(), "Login successful", Toast.LENGTH_SHORT).show()
+
+                            parentFragmentManager.beginTransaction()
+                                .setCustomAnimations(R.anim.fade_in,0,0,0)
+                                .replace(R.id.fragment_container, OnboardingFragment())
+                                .commit()
                         }
                         is UiState.Error -> {
                             toggleLoadingViews(isLoading = false)
