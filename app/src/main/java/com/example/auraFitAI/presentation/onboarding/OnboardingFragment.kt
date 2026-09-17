@@ -13,10 +13,10 @@ import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.FragmentOnboardingBinding
 import com.example.auraFitAI.domain.util.UiState
 import com.example.auraFitAI.presentation.auth.AuthViewModel
-import com.example.auraFitAI.presentation.home.HomeFragment
 import com.example.auraFitAI.presentation.util.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+
 @AndroidEntryPoint
 class OnboardingFragment: Fragment(R.layout.fragment_onboarding) {
     private val binding by viewBinding(FragmentOnboardingBinding::bind)
@@ -39,7 +39,7 @@ class OnboardingFragment: Fragment(R.layout.fragment_onboarding) {
 
     private fun setupDropDownMenu(){
         val fitnessGoal = arrayOf("Lose Weight", "Build Muscle", "Stay Fit", "Increase Endurance")
-        val adapter = ArrayAdapter(requireContext(),android.R.layout.simple_dropdown_item_1line,fitnessGoal)
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, fitnessGoal)
         binding.actvFitnessGoal.setAdapter(adapter)
     }
 
@@ -79,13 +79,10 @@ class OnboardingFragment: Fragment(R.layout.fragment_onboarding) {
                             binding.btnCompleteProfile.text = "Synchronizing Profile..."
                         }
                         is UiState.Success -> {
-                            binding.btnCompleteProfile.isEnabled = true
-                            Toast.makeText(requireContext(), "Setup Complete! Welcome aboard.", Toast.LENGTH_SHORT).show()
-
-                            parentFragmentManager.beginTransaction()
-                                .setCustomAnimations(R.anim.fade_in, 0, 0, 0)
-                                .replace(R.id.fragment_container, HomeFragment())
-                                .commit()
+                            binding.btnCompleteProfile.isEnabled = false
+                            binding.btnCompleteProfile.text = "Synchronizing Profile..."
+                            Toast.makeText(requireContext(), "Profile synchronized successfully!", Toast.LENGTH_SHORT).show()
+                            // As requested by user: stays on this state and does not navigate to HomeFragment automatically.
                         }
 
                         is UiState.Error -> {
