@@ -20,7 +20,7 @@
     <style name="Theme.AuraFitAI.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/light_background</item>
 
-        <item name="windowSplashScreenAnimatedIcon">@drawable/aurafit_logo</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_aurafit_logo</item>
 
         <item name="postSplashScreenTheme">@style/Theme.AuraFitAI</item>
     </style>
