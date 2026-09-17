@@ -13,6 +13,7 @@ import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.FragmentOnboardingBinding
 import com.example.auraFitAI.domain.util.UiState
 import com.example.auraFitAI.presentation.auth.AuthViewModel
+import com.example.auraFitAI.presentation.home.HomeFragment
 import com.example.auraFitAI.presentation.util.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -79,10 +80,13 @@ class OnboardingFragment: Fragment(R.layout.fragment_onboarding) {
                             binding.btnCompleteProfile.text = "Synchronizing Profile..."
                         }
                         is UiState.Success -> {
-                            binding.btnCompleteProfile.isEnabled = false
-                            binding.btnCompleteProfile.text = "Synchronizing Profile..."
-                            Toast.makeText(requireContext(), "Profile synchronized successfully!", Toast.LENGTH_SHORT).show()
-                            // As requested by user: stays on this state and does not navigate to HomeFragment automatically.
+                            binding.btnCompleteProfile.isEnabled = true
+                            Toast.makeText(requireContext(), "Setup Complete! Welcome aboard.", Toast.LENGTH_SHORT).show()
+
+                            parentFragmentManager.beginTransaction()
+                                .setCustomAnimations(R.anim.fade_in, 0, 0, 0)
+                                .replace(R.id.fragment_container, HomeFragment())
+                                .commit()
                         }
 
                         is UiState.Error -> {
