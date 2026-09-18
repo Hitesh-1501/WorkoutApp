@@ -15,6 +15,7 @@ import com.example.auraFitAI.domain.util.UiState
 import com.example.auraFitAI.presentation.auth.AuthViewModel
 import com.example.auraFitAI.presentation.home.HomeFragment
 import com.example.auraFitAI.presentation.util.viewBinding
+import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -29,36 +30,49 @@ class OnboardingFragment: Fragment(R.layout.fragment_onboarding) {
         arguments?.let {
             userUid = it.getString("USER_UID_KEY")
         }
+        if (userUid.isNullOrEmpty()) {
+            userUid = FirebaseAuth.getInstance().currentUser?.uid
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupDropDownMenu()
+        setupDropDownMenus()
         setupListeners()
         observeViewModelState()
     }
 
-    private fun setupDropDownMenu(){
-        val fitnessGoal = arrayOf("Lose Weight", "Build Muscle", "Stay Fit", "Increase Endurance")
-        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, fitnessGoal)
-        binding.actvFitnessGoal.setAdapter(adapter)
+    private fun setupDropDownMenus(){
+        val genderOptions = arrayOf("Male", "Female", "Other", "Prefer not to say")
+        val genderAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, genderOptions)
+        binding.actvGender.setAdapter(genderAdapter)
+
+        val activityLevels = arrayOf("Beginner (Little/No Exercise)", "Intermediate (1-3 days/week)", "Advanced (3-5 days/week)", "Athlete (6+ days/week)")
+        val activityAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, activityLevels)
+        binding.actvActivityLevel.setAdapter(activityAdapter)
+
+        val fitnessGoals = arrayOf("Lose Weight", "Build Muscle", "Stay Fit", "Increase Endurance", "Tone & Sculpt")
+        val goalAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, fitnessGoals)
+        binding.actvFitnessGoal.setAdapter(goalAdapter)
     }
 
     private fun setupListeners(){
         binding.btnCompleteProfile.setOnClickListener {
             val ageStr = binding.etAge.text.toString().trim()
+            val gender = binding.actvGender.text.toString().trim()
             val heightStr = binding.etHeight.text.toString().trim()
             val weightStr = binding.etWeight.text.toString().trim()
+            val activityLevel = binding.actvActivityLevel.text.toString().trim()
             val goal = binding.actvFitnessGoal.text.toString().trim()
 
-            if (ageStr.isEmpty() || heightStr.isEmpty() || weightStr.isEmpty() || goal.isEmpty()) {
-                Toast.makeText(requireContext(), "Please populate all biometric fields", Toast.LENGTH_SHORT).show()
+            if (ageStr.isEmpty() || gender.isEmpty() || heightStr.isEmpty() || weightStr.isEmpty() || activityLevel.isEmpty() || goal.isEmpty()) {
+                Toast.makeText(requireContext(), "Please complete all fields and selections", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val uid = userUid
-            if (uid == null) {
-                Toast.makeText(requireContext(), "User session token missing. Please register again.", Toast.LENGTH_LONG).show()
+            val uid = userUid ?: FirebaseAuth.getInstance().currentUser?.uid
+            if (uid.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), "User session token missing. Please log in again.", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
@@ -66,7 +80,7 @@ class OnboardingFragment: Fragment(R.layout.fragment_onboarding) {
             val height = heightStr.toDouble()
             val weight = weightStr.toDouble()
 
-            viewModel.submitOnboarding(uid, age, height, weight, goal)
+            viewModel.submitOnboarding(uid, age, height, weight, gender, activityLevel, goal)
         }
     }
 
