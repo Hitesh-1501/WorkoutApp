@@ -45,6 +45,8 @@ class AuthRepositoryImpl @Inject constructor(
         age: Int,
         height: Double,
         weight: Double,
+        gender: String,
+        activityLevel: String,
         fitnessGoal: String
     ): NetworkResult<Boolean> {
         return try {
@@ -53,6 +55,8 @@ class AuthRepositoryImpl @Inject constructor(
                 "age" to age,
                 "height" to height,
                 "weight" to weight,
+                "gender" to gender,
+                "activityLevel" to activityLevel,
                 "fitnessGoal" to fitnessGoal,
                 "createdAt" to System.currentTimeMillis()
             )
