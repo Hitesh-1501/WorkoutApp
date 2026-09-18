@@ -19,6 +19,8 @@ interface AuthRepository {
         age: Int,
         height: Double,
         weight: Double,
+        gender: String,
+        activityLevel: String,
         fitnessGoal: String
     ): NetworkResult<Boolean>
 
