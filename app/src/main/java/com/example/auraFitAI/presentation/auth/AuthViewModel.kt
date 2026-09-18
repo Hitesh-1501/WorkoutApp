@@ -65,12 +65,14 @@ class AuthViewModel @Inject constructor(
         age: Int,
         height: Double,
         weight: Double,
+        gender: String,
+        activityLevel: String,
         goal: String
     ) {
         _onboardingState.value = UiState.Loading
 
         viewModelScope.launch {
-            when (val result = authRepository.saveOnboardingData(uid, age, height, weight, goal)) {
+            when (val result = authRepository.saveOnboardingData(uid, age, height, weight, gender, activityLevel, goal)) {
                 is NetworkResult.Success -> {
                     _onboardingState.value = UiState.Success(result.data)
                 }
