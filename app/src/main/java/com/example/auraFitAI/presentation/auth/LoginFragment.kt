@@ -19,7 +19,9 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.FragmentLoginBinding
 import com.example.auraFitAI.domain.util.UiState
+import com.example.auraFitAI.presentation.home.HomeFragment
 import com.example.auraFitAI.presentation.onboarding.OnboardingFragment
+import com.example.auraFitAI.presentation.util.SessionManager
 import com.example.auraFitAI.presentation.util.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -69,9 +71,16 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                             toggleLoadingViews(isLoading = false)
                             Toast.makeText(requireContext(), "Login successful", Toast.LENGTH_SHORT).show()
 
+                            val uid = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.uid
+                            val nextFragment = if (uid != null && SessionManager.isOnboardingCompleted(requireContext(), uid)) {
+                                HomeFragment()
+                            } else {
+                                OnboardingFragment()
+                            }
+
                             parentFragmentManager.beginTransaction()
                                 .setCustomAnimations(R.anim.fade_in,0,0,0)
-                                .replace(R.id.fragment_container, OnboardingFragment())
+                                .replace(R.id.fragment_container, nextFragment)
                                 .commit()
                         }
                         is UiState.Error -> {
