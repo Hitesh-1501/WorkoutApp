@@ -63,103 +63,127 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvSignUpTitle" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilSignUpName"
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvSignUpName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="28dp"
-                    app:boxBackgroundColor="@color/white"
-                    app:boxCornerRadiusTopStart="28dp"
-                    app:boxCornerRadiusTopEnd="28dp"
-                    app:boxCornerRadiusBottomStart="28dp"
-                    app:boxCornerRadiusBottomEnd="28dp"
-                    app:boxStrokeColor="@color/borderStroke"
-                    app:boxStrokeWidth="1dp"
-                    app:hintEnabled="false"
-                    app:startIconDrawable="@drawable/ic_user"
-                    app:startIconTint="@color/input_icon_tint"
+                    app:cardCornerRadius="28dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@android:color/transparent"
                     app:layout_constraintTop_toBottomOf="@id/tvSignUpSubtitle">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etSignUpName"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilSignUpName"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Full Name"
-                        android:background="@android:color/transparent"
-                        android:textColorHint="@color/input_hint_color"
-                        android:inputType="textPersonName"
-                        android:paddingStart="12dp"
-                        android:paddingVertical="16dp"
-                        android:textColor="@color/textColor"
-                        android:textSize="15sp"/>
-                </com.google.android.material.textfield.TextInputLayout>
+                        app:boxBackgroundColor="@color/white"
+                        app:boxCornerRadiusTopStart="28dp"
+                        app:boxCornerRadiusTopEnd="28dp"
+                        app:boxCornerRadiusBottomStart="28dp"
+                        app:boxCornerRadiusBottomEnd="28dp"
+                        app:boxStrokeColor="@color/borderStroke"
+                        app:boxStrokeWidth="1dp"
+                        app:hintEnabled="false"
+                        app:startIconDrawable="@drawable/ic_user"
+                        app:startIconTint="@color/input_icon_tint">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilSignUpEmail"
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etSignUpName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Full Name"
+                            android:textColorHint="@color/input_hint_color"
+                            android:inputType="textPersonName"
+                            android:paddingStart="12dp"
+                            android:paddingVertical="16dp"
+                            android:textColor="@color/textColor"
+                            android:textSize="15sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvSignUpEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    app:boxBackgroundColor="@color/white"
-                    app:boxCornerRadiusTopStart="28dp"
-                    app:boxCornerRadiusTopEnd="28dp"
-                    app:boxCornerRadiusBottomStart="28dp"
-                    app:boxCornerRadiusBottomEnd="28dp"
-                    app:boxStrokeColor="@color/borderStroke"
-                    app:boxStrokeWidth="1dp"
-                    app:hintEnabled="false"
-                    app:startIconDrawable="@drawable/ic_email"
-                    app:startIconTint="@color/input_icon_tint"
-                    app:layout_constraintTop_toBottomOf="@id/tilSignUpName">
+                    app:cardCornerRadius="28dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:layout_constraintTop_toBottomOf="@id/cvSignUpName">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etSignUpEmail"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilSignUpEmail"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Email Address"
-                        android:background="@android:color/transparent"
-                        android:textColorHint="@color/input_hint_color"
-                        android:inputType="textEmailAddress"
-                        android:paddingStart="12dp"
-                        android:paddingVertical="16dp"
-                        android:textColor="@color/textColor"
-                        android:textSize="15sp"/>
-                </com.google.android.material.textfield.TextInputLayout>
+                        app:boxBackgroundColor="@color/white"
+                        app:boxCornerRadiusTopStart="28dp"
+                        app:boxCornerRadiusTopEnd="28dp"
+                        app:boxCornerRadiusBottomStart="28dp"
+                        app:boxCornerRadiusBottomEnd="28dp"
+                        app:boxStrokeColor="@color/borderStroke"
+                        app:boxStrokeWidth="1dp"
+                        app:hintEnabled="false"
+                        app:startIconDrawable="@drawable/ic_email"
+                        app:startIconTint="@color/input_icon_tint">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilSignUpPassword"
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etSignUpEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Email Address"
+                            android:textColorHint="@color/input_hint_color"
+                            android:inputType="textEmailAddress"
+                            android:paddingStart="12dp"
+                            android:paddingVertical="16dp"
+                            android:textColor="@color/textColor"
+                            android:textSize="15sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvSignUpPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    app:boxBackgroundColor="@color/white"
-                    app:boxCornerRadiusTopStart="28dp"
-                    app:boxCornerRadiusTopEnd="28dp"
-                    app:boxCornerRadiusBottomStart="28dp"
-                    app:boxCornerRadiusBottomEnd="28dp"
-                    app:boxStrokeColor="@color/borderStroke"
-                    app:boxStrokeWidth="1dp"
-                    app:hintEnabled="false"
-                    app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
-                    app:startIconTint="@color/input_icon_tint"
-                    app:endIconMode="password_toggle"
-                    app:endIconTint="@color/input_icon_tint"
-                    app:layout_constraintTop_toBottomOf="@id/tilSignUpEmail">
+                    app:cardCornerRadius="28dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:layout_constraintTop_toBottomOf="@id/cvSignUpEmail">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etSignUpPassword"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilSignUpPassword"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Password"
-                        android:background="@android:color/transparent"
-                        android:textColorHint="@color/input_hint_color"
-                        android:inputType="textPassword"
-                        android:paddingStart="12dp"
-                        android:paddingVertical="16dp"
-                        android:textColor="@color/textColor"
-                        android:textSize="15sp"/>
-                </com.google.android.material.textfield.TextInputLayout>
+                        app:boxBackgroundColor="@color/white"
+                        app:boxCornerRadiusTopStart="28dp"
+                        app:boxCornerRadiusTopEnd="28dp"
+                        app:boxCornerRadiusBottomStart="28dp"
+                        app:boxCornerRadiusBottomEnd="28dp"
+                        app:boxStrokeColor="@color/borderStroke"
+                        app:boxStrokeWidth="1dp"
+                        app:hintEnabled="false"
+                        app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
+                        app:startIconTint="@color/input_icon_tint"
+                        app:endIconMode="password_toggle"
+                        app:endIconTint="@color/input_icon_tint">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etSignUpPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Password"
+                            android:textColorHint="@color/input_hint_color"
+                            android:inputType="textPassword"
+                            android:paddingStart="12dp"
+                            android:paddingVertical="16dp"
+                            android:textColor="@color/textColor"
+                            android:textSize="15sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
 
                 <FrameLayout
                     android:id="@+id/flSignUpBtnContainer"
@@ -167,7 +191,7 @@
                     android:layout_height="56dp"
                     android:layout_marginTop="32dp"
                     android:background="@drawable/bg_button_gradient"
-                    app:layout_constraintTop_toBottomOf="@id/tilSignUpPassword">
+                    app:layout_constraintTop_toBottomOf="@id/cvSignUpPassword">
 
                     <Button
                         android:id="@+id/btnSignUp"
@@ -247,7 +271,7 @@
                         app:cornerRadius="27dp" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnPhoneDummy"
+                        android:id="@+id/btnSignUpPhoneDummy"
                         style="@style/Widget.Material3.Button.OutlinedButton"
                         android:layout_width="0dp"
                         android:layout_height="54dp"
