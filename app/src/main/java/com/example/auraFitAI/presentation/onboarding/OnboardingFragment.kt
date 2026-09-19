@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -14,6 +15,7 @@ import com.example.auraFitAI.databinding.FragmentOnboardingBinding
 import com.example.auraFitAI.domain.util.UiState
 import com.example.auraFitAI.presentation.auth.AuthViewModel
 import com.example.auraFitAI.presentation.home.HomeFragment
+import com.example.auraFitAI.presentation.util.SessionManager
 import com.example.auraFitAI.presentation.util.viewBinding
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,6 +39,14 @@ class OnboardingFragment: Fragment(R.layout.fragment_onboarding) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                FirebaseAuth.getInstance().signOut()
+                requireActivity().finish()
+            }
+        })
+
         setupDropDownMenus()
         setupListeners()
         observeViewModelState()
@@ -96,6 +106,11 @@ class OnboardingFragment: Fragment(R.layout.fragment_onboarding) {
                         is UiState.Success -> {
                             binding.btnCompleteProfile.isEnabled = true
                             Toast.makeText(requireContext(), "Setup Complete! Welcome aboard.", Toast.LENGTH_SHORT).show()
+
+                            val uid = userUid ?: FirebaseAuth.getInstance().currentUser?.uid
+                            if (uid != null) {
+                                SessionManager.setOnboardingCompleted(requireContext(), uid, true)
+                            }
 
                             parentFragmentManager.beginTransaction()
                                 .setCustomAnimations(R.anim.fade_in, 0, 0, 0)
