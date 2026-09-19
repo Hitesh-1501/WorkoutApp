@@ -11,7 +11,7 @@ import android.view.animation.AnimationUtils
 import androidx.activity.OnBackPressedCallback
 import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.FragmentHomeBinding
-import com.example.auraFitAI.presentation.onboarding.WelcomeCarouselFragment
+import com.example.auraFitAI.presentation.auth.LoginFragment
 import com.example.auraFitAI.presentation.profile.BMIActivity
 import com.example.auraFitAI.presentation.profile.HistoryActivity
 import com.example.auraFitAI.presentation.util.viewBinding
@@ -63,7 +63,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             FirebaseAuth.getInstance().signOut()
             parentFragmentManager.beginTransaction()
                 .setCustomAnimations(R.anim.fade_in, 0, 0, 0)
-                .replace(R.id.fragment_container, WelcomeCarouselFragment())
+                .replace(R.id.fragment_container, LoginFragment())
                 .commit()
         }
     }
