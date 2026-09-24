@@ -66,4 +66,8 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.51")
     implementation("androidx.fragment:fragment-ktx:1.8.9")
     ksp("com.google.dagger:hilt-compiler:2.51")
+
+    val navVersion = "2.8.0"
+    implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
 }
