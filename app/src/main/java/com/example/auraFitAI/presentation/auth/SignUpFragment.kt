@@ -14,6 +14,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.FragmentSignUpBinding
 import com.example.auraFitAI.domain.util.UiState
@@ -50,11 +51,7 @@ class SignUpFragment: Fragment(R.layout.fragment_sign_up) {
         }
 
         binding.tvNavigateToLogin.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .setCustomAnimations(R.anim.fade_in,0,0,0)
-                .replace(R.id.fragment_container, LoginFragment())
-                .addToBackStack(null)
-                .commit()
+            findNavController().navigate(R.id.loginFragment)
         }
     }
 
@@ -69,16 +66,11 @@ class SignUpFragment: Fragment(R.layout.fragment_sign_up) {
                         is UiState.Success -> {
                             toggleLoadingViews(isLoading = false)
                             val userUid = uiState.data
-                            val onboardingFragment = OnboardingFragment().apply {
-                                arguments = Bundle().apply {
-                                    putString("USER_UID_KEY", userUid)
-                                }
+                            val bundle = Bundle().apply {
+                                putString("USER_UID_KEY", userUid)
                             }
 
-                            parentFragmentManager.beginTransaction()
-                                .setCustomAnimations(R.anim.fade_in,0,0,0)
-                                .replace(R.id.fragment_container, onboardingFragment)
-                                .commit()
+                            findNavController().navigate(R.id.onboardingFragment, bundle)
                         }
                         is UiState.Error -> {
                             toggleLoadingViews(isLoading = false)
