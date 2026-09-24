@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.auraFitAI.presentation.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/exploreFragment"
+        android:name="com.example.auraFitAI.presentation.explore.ExploreFragment"
+        android:label="Explore"
+        tools:layout="@layout/fragment_explore" />
+
+    <fragment
+        android:id="@+id/aiCoachFragment"
+        android:name="com.example.auraFitAI.presentation.aicoach.AiCoachFragment"
+        android:label="AI Coach"
+        tools:layout="@layout/fragment_ai_coach" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.auraFitAI.presentation.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/welcomeCarouselFragment"
+        android:name="com.example.auraFitAI.presentation.onboarding.WelcomeCarouselFragment"
+        android:label="Welcome"
+        tools:layout="@layout/fragment_welcome_carousel" />
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.auraFitAI.presentation.auth.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.auraFitAI.presentation.auth.SignUpFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_sign_up" />
+
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.example.auraFitAI.presentation.onboarding.OnboardingFragment"
+        android:label="Onboarding"
+        tools:layout="@layout/fragment_onboarding" />
+
+</navigation>
