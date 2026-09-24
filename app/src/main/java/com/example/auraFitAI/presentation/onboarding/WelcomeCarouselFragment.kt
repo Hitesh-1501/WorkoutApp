@@ -6,11 +6,10 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.FragmentWelcomeCarouselBinding
-import com.example.auraFitAI.presentation.auth.LoginFragment
-import com.example.auraFitAI.presentation.auth.SignUpFragment
 import com.example.auraFitAI.presentation.util.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,8 +32,8 @@ class WelcomeCarouselFragment : Fragment(R.layout.fragment_welcome_carousel) {
         )
         val onboardingAdapter = OnboardingAdapter(
             slides = slides,
-            onGetStartedClick = { navigateToScreen(SignUpFragment()) },
-            onLogInClick = { navigateToScreen(LoginFragment()) },
+            onGetStartedClick = { findNavController().navigate(R.id.signUpFragment) },
+            onLogInClick = { findNavController().navigate(R.id.loginFragment) },
             onSkipClick = { binding.viewPagerOnboarding.currentItem = slides.size - 1 }
         )
 
@@ -80,13 +79,6 @@ class WelcomeCarouselFragment : Fragment(R.layout.fragment_welcome_carousel) {
                 imageView.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.indicator_inactive))
             }
         }
-    }
-
-    private fun navigateToScreen(destination: Fragment) {
-        parentFragmentManager.beginTransaction()
-            .setCustomAnimations(R.anim.fade_in, 0, 0, 0)
-            .replace(R.id.fragment_container,destination)
-            .commit()
     }
 
 }
