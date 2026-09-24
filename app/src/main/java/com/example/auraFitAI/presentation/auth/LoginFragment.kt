@@ -16,6 +16,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.FragmentLoginBinding
 import com.example.auraFitAI.domain.util.UiState
@@ -51,11 +52,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         }
 
         binding.tvNavigateToSignUp.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .setCustomAnimations(R.anim.fade_in,0,0,0)
-                .replace(R.id.fragment_container, SignUpFragment())
-                .addToBackStack(null)
-                .commit()
+            findNavController().navigate(R.id.signUpFragment)
         }
     }
 
@@ -72,16 +69,13 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                             Toast.makeText(requireContext(), "Login successful", Toast.LENGTH_SHORT).show()
 
                             val uid = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.uid
-                            val nextFragment = if (uid != null && SessionManager.isOnboardingCompleted(requireContext(), uid)) {
-                                HomeFragment()
+                            val nextDestination = if (uid != null && SessionManager.isOnboardingCompleted(requireContext(), uid)) {
+                                R.id.homeFragment
                             } else {
-                                OnboardingFragment()
+                                R.id.onboardingFragment
                             }
 
-                            parentFragmentManager.beginTransaction()
-                                .setCustomAnimations(R.anim.fade_in,0,0,0)
-                                .replace(R.id.fragment_container, nextFragment)
-                                .commit()
+                            findNavController().navigate(nextDestination)
                         }
                         is UiState.Error -> {
                             toggleLoadingViews(isLoading = false)
