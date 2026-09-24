@@ -10,11 +10,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.FragmentOnboardingBinding
 import com.example.auraFitAI.domain.util.UiState
 import com.example.auraFitAI.presentation.auth.AuthViewModel
-import com.example.auraFitAI.presentation.home.HomeFragment
 import com.example.auraFitAI.presentation.util.SessionManager
 import com.example.auraFitAI.presentation.util.viewBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -112,10 +112,7 @@ class OnboardingFragment: Fragment(R.layout.fragment_onboarding) {
                                 SessionManager.setOnboardingCompleted(requireContext(), uid, true)
                             }
 
-                            parentFragmentManager.beginTransaction()
-                                .setCustomAnimations(R.anim.fade_in, 0, 0, 0)
-                                .replace(R.id.fragment_container, HomeFragment())
-                                .commit()
+                            findNavController().navigate(R.id.homeFragment)
                         }
 
                         is UiState.Error -> {
