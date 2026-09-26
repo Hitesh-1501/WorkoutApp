@@ -25,4 +25,15 @@
         <item name="postSplashScreenTheme">@style/Theme.AuraFitAI</item>
     </style>
 
+    <style name="Widget.AuraFit.BottomNavigationView.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/gradient_btn_start</item>
+        <item name="android:width">64dp</item>
+        <item name="android:height">36dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.AuraFit.Pill</item>
+    </style>
+
+    <style name="ShapeAppearance.AuraFit.Pill" parent="ShapeAppearance.Material3.Corner.Full">
+        <item name="cornerSize">18dp</item>
+    </style>
+
 </resources>
