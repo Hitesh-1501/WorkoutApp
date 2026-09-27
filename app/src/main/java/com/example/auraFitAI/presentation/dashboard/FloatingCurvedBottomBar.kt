@@ -23,18 +23,17 @@ import androidx.compose.ui.graphics.*
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.auraFitAI.R
 
-enum class NavDestination(val routeId: Int, val title: String, val icon: ImageVector) {
-    EXPLORE(R.id.exploreFragment, "Explore", Icons.Default.Explore),
-    HOME(R.id.homeFragment, "Home", Icons.Default.Home),
-    AI_COACH(R.id.aiCoachFragment, "AI Coach", Icons.Default.FitnessCenter),
-    PROFILE(R.id.profileFragment, "Profile", Icons.Default.Person)
+enum class NavDestination(val route: String, val title: String, val icon: ImageVector) {
+    EXPLORE("explore", "Explore", Icons.Default.Explore),
+    HOME("home", "Home", Icons.Default.Home),
+    AI_COACH("ai_coach", "AI Coach", Icons.Default.FitnessCenter),
+    PROFILE("profile", "Profile", Icons.Default.Person)
 }
 
 @Composable
 fun FloatingCurvedBottomBar(
-    currentDestinationId: Int,
+    currentRoute: String,
     onItemSelected: (NavDestination) -> Unit
 ) {
     val destinations = listOf(
@@ -44,7 +43,7 @@ fun FloatingCurvedBottomBar(
         NavDestination.PROFILE
     )
 
-    val selectedIndex = destinations.indexOfFirst { it.routeId == currentDestinationId }.coerceAtLeast(0)
+    val selectedIndex = destinations.indexOfFirst { it.route == currentRoute }.coerceAtLeast(0)
 
     val isDark = isSystemInDarkTheme()
     val surfaceColor = if (isDark) Color(0xFF161820) else Color.White
