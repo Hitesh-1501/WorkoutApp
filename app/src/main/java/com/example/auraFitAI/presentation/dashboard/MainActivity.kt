@@ -30,11 +30,11 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
 
         binding.composeBottomBar.setContent {
-            var currentDestId by remember { mutableStateOf(navController.currentDestination?.id ?: R.id.homeFragment) }
+            var currentRoute by remember { mutableStateOf(navController.currentDestination?.route ?: "home") }
 
             DisposableEffect(navController) {
                 val listener = NavController.OnDestinationChangedListener { _, destination, _ ->
-                    currentDestId = destination.id
+                    destination.route?.let { currentRoute = it }
                 }
                 navController.addOnDestinationChangedListener(listener)
                 onDispose {
@@ -42,17 +42,17 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            val showBar = when (currentDestId) {
-                R.id.homeFragment, R.id.exploreFragment, R.id.aiCoachFragment, R.id.profileFragment -> true
+            val showBar = when (currentRoute) {
+                "home", "explore", "ai_coach", "profile" -> true
                 else -> false
             }
 
             if (showBar) {
                 FloatingCurvedBottomBar(
-                    currentDestinationId = currentDestId,
+                    currentRoute = currentRoute,
                     onItemSelected = { destination ->
-                        if (navController.currentDestination?.id != destination.routeId) {
-                            navController.navigate(destination.routeId) {
+                        if (navController.currentDestination?.route != destination.route) {
+                            navController.navigate(destination.route) {
                                 popUpTo(navController.graph.startDestinationId) {
                                     saveState = true
                                 }
