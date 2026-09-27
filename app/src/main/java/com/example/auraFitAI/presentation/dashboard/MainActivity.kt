@@ -1,12 +1,12 @@
 package com.example.auraFitAI.presentation.dashboard
 
 import android.os.Bundle
-import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.runtime.*
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.ActivityMainBinding
 import com.example.auraFitAI.presentation.auth.AuthViewModel
@@ -29,16 +29,39 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
 
-        binding.bottomNavigationView.setupWithNavController(navController)
+        binding.composeBottomBar.setContent {
+            var currentDestId by remember { mutableStateOf(navController.currentDestination?.id ?: R.id.homeFragment) }
 
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.homeFragment, R.id.exploreFragment, R.id.aiCoachFragment, R.id.profileFragment -> {
-                    binding.bottomNavigationView.visibility = View.VISIBLE
+            DisposableEffect(navController) {
+                val listener = NavController.OnDestinationChangedListener { _, destination, _ ->
+                    currentDestId = destination.id
                 }
-                else -> {
-                    binding.bottomNavigationView.visibility = View.GONE
+                navController.addOnDestinationChangedListener(listener)
+                onDispose {
+                    navController.removeOnDestinationChangedListener(listener)
                 }
+            }
+
+            val showBar = when (currentDestId) {
+                R.id.homeFragment, R.id.exploreFragment, R.id.aiCoachFragment, R.id.profileFragment -> true
+                else -> false
+            }
+
+            if (showBar) {
+                FloatingCurvedBottomBar(
+                    currentDestinationId = currentDestId,
+                    onItemSelected = { destination ->
+                        if (navController.currentDestination?.id != destination.routeId) {
+                            navController.navigate(destination.routeId) {
+                                popUpTo(navController.graph.startDestinationId) {
+                                    saveState = true
+                                }
+                                launchSingleTop = true
+                                restoreState = true
+                            }
+                        }
+                    }
+                )
             }
         }
 
