@@ -18,7 +18,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.FragmentSignUpBinding
 import com.example.auraFitAI.domain.util.UiState
-import com.example.auraFitAI.presentation.onboarding.OnboardingFragment
 import com.example.auraFitAI.presentation.util.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
