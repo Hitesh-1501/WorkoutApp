@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
+    android:background="?attr/colorSurface"
     tools:context=".presentation.dashboard.FinishActivity">
     
     <androidx.appcompat.widget.Toolbar
@@ -20,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="END"
-        android:textColor="@color/athletic_emerald_light"
+        android:textColor="?attr/colorPrimary"
         android:textSize="35sp"/>
 
     <LinearLayout
@@ -35,7 +36,8 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:contentDescription="start image"
-            android:src="@drawable/ic_action_done"/>
+            android:src="@drawable/ic_action_done"
+            app:tint="?attr/colorOnSurface"/>
 
 
     </LinearLayout>
@@ -45,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="Congratulations!"
+        android:textColor="?attr/colorOnSurface"
         android:textSize="18sp"
         />
     
@@ -52,6 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="You have complete the workout!"
+        android:textColor="?attr/colorOnSurfaceVariant"
         android:textSize="18sp"/>
 
     <Button
@@ -60,9 +64,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginTop="35dp"
-        android:backgroundTint="@color/athletic_emerald_light"
+        android:backgroundTint="?attr/colorPrimary"
         android:text="FINISH"
-        android:textColor="#FFFFFF"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="18sp" />
 
 </LinearLayout>
