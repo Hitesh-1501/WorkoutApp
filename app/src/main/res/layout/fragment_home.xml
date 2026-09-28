@@ -5,7 +5,7 @@
     android:padding="@dimen/main_screeen_main_layout_padding"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   >
+    android:background="?attr/colorSurface">
     <ImageView
         android:id="@+id/btnLogout"
         android:layout_width="36dp"
@@ -42,6 +42,7 @@
             android:layout_height="wrap_content"
             android:text="START"
             android:layout_gravity="center"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="@dimen/default_button_text_size"
             android:textStyle="bold"/>
 
@@ -65,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="BMI"
-            android:textColor="#FFFFFF"
+            android:textColor="?attr/colorOnPrimary"
             android:textSize="22sp"
             android:textStyle="bold" />
     </FrameLayout>
@@ -76,7 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="Calculator"
-        android:textColor="@color/athletic_emerald_light"
+        android:textColor="?attr/colorPrimary"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/flBMI"
@@ -102,6 +103,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:src = "@drawable/baseline_history_24"
+            app:tint="?attr/colorOnPrimary"
             />
 
     </FrameLayout>
@@ -112,7 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="History"
-        android:textColor="@color/athletic_emerald_light"
+        android:textColor="?attr/colorPrimary"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/flHistory"
@@ -138,6 +140,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:src = "@drawable/baseline_share_24"
+            app:tint="?attr/colorOnPrimary"
             />
 
     </FrameLayout>
@@ -148,7 +151,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="Share"
-        android:textColor="@color/athletic_emerald_light"
+        android:textColor="?attr/colorPrimary"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/flShare"
