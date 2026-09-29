@@ -30,9 +30,9 @@
 
                 <ImageView
                     android:id="@+id/ivLoginLogo"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="12dp"
                     android:src="@drawable/ic_aurafit_logo"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -42,10 +42,10 @@
                     android:id="@+id/tvLoginTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="16dp"
                     android:text="Welcome Back!"
                     android:textColor="?attr/colorOnSurface"
-                    android:textSize="24sp"
+                    android:textSize="26sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -58,25 +58,23 @@
                     android:layout_marginTop="4dp"
                     android:text="Log in to continue your fitness journey"
                     android:textColor="?attr/colorOnSurfaceVariant"
-                    android:textSize="13sp"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvLoginTitle" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilEmail"
-                    style="@style/Widget.Material3.TextInputLayout.FilledBox"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    app:boxBackgroundMode="filled"
-                    app:boxBackgroundColor="?attr/colorSurfaceVariant"
+                    android:layout_marginTop="32dp"
                     app:boxCornerRadiusTopStart="28dp"
                     app:boxCornerRadiusTopEnd="28dp"
                     app:boxCornerRadiusBottomStart="28dp"
                     app:boxCornerRadiusBottomEnd="28dp"
-                    app:boxStrokeWidth="0dp"
-                    app:boxStrokeWidthFocused="0dp"
+                    app:boxStrokeColor="@color/borderStroke"
+                    app:boxStrokeWidth="1dp"
                     app:hintEnabled="false"
                     app:startIconDrawable="@drawable/ic_email"
                     app:startIconTint="@color/input_icon_tint"
@@ -85,31 +83,28 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etEmail"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:hint="Email or Phone"
                         android:textColorHint="@color/input_hint_color"
                         android:inputType="textEmailAddress"
                         android:paddingStart="12dp"
-                        android:paddingEnd="16dp"
+                        android:paddingVertical="16dp"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="15sp"
-                        android:background="@android:color/transparent"/>
+                        android:textSize="15sp"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilPassword"
-                    style="@style/Widget.Material3.TextInputLayout.FilledBox"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    app:boxBackgroundMode="filled"
-                    app:boxBackgroundColor="?attr/colorSurfaceVariant"
+                    android:layout_marginTop="16dp"
                     app:boxCornerRadiusTopStart="28dp"
                     app:boxCornerRadiusTopEnd="28dp"
                     app:boxCornerRadiusBottomStart="28dp"
                     app:boxCornerRadiusBottomEnd="28dp"
-                    app:boxStrokeWidth="0dp"
-                    app:boxStrokeWidthFocused="0dp"
+                    app:boxStrokeColor="@color/borderStroke"
+                    app:boxStrokeWidth="1dp"
                     app:hintEnabled="false"
                     app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
                     app:startIconTint="@color/input_icon_tint"
@@ -120,22 +115,21 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etPassword"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:hint="Password"
                         android:textColorHint="@color/input_hint_color"
                         android:inputType="textPassword"
                         android:paddingStart="12dp"
-                        android:paddingEnd="16dp"
+                        android:paddingVertical="16dp"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="15sp"
-                        android:background="@android:color/transparent"/>
+                        android:textSize="15sp"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
                     android:id="@+id/tvForgotPassword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="14dp"
                     android:text="Forgot Password?"
                     android:textColor="@color/brand_teal_text"
                     android:textStyle="bold"
@@ -147,7 +141,7 @@
                     android:id="@+id/flLoginBtnContainer"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="28dp"
                     android:background="@drawable/bg_button_gradient"
                     app:layout_constraintTop_toBottomOf="@id/tvForgotPassword">
 
@@ -176,7 +170,7 @@
                     android:id="@+id/llSeparator"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="28dp"
+                    android:layout_marginTop="36dp"
                     android:gravity="center"
                     android:orientation="horizontal"
                     app:layout_constraintTop_toBottomOf="@id/flLoginBtnContainer">
@@ -207,7 +201,7 @@
                     android:id="@+id/llSocials"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="24dp"
                     android:orientation="horizontal"
                     app:layout_constraintTop_toBottomOf="@id/llSeparator">
 
@@ -215,42 +209,42 @@
                         android:id="@+id/btnGoogleDummy"
                         style="@style/Widget.Material3.Button.OutlinedButton"
                         android:layout_width="0dp"
-                        android:layout_height="52dp"
+                        android:layout_height="54dp"
                         android:layout_weight="1"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginEnd="10dp"
                         android:text="Google"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="14sp"
+                        android:textSize="15sp"
                         android:textStyle="bold"
                         app:strokeColor="@color/borderStroke"
                         app:strokeWidth="1dp"
                         app:icon="@drawable/google"
                         app:iconTint="@color/athletic_emerald_light"
-                        app:cornerRadius="26dp" />
+                        app:cornerRadius="27dp" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnPhoneDummy"
                         style="@style/Widget.Material3.Button.OutlinedButton"
                         android:layout_width="0dp"
-                        android:layout_height="52dp"
+                        android:layout_height="54dp"
                         android:layout_weight="1"
-                        android:layout_marginStart="8dp"
+                        android:layout_marginStart="10dp"
                         android:text="Phone"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="14sp"
+                        android:textSize="15sp"
                         android:textStyle="bold"
                         app:strokeColor="@color/borderStroke"
                         app:strokeWidth="1dp"
                         app:icon="@android:drawable/stat_sys_vp_phone_call"
                         app:iconTint="@color/athletic_emerald_light"
-                        app:cornerRadius="26dp" />
+                        app:cornerRadius="27dp" />
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/tvNavigateToSignUp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="32dp"
                     android:text="Don't have an account? Sign Up"
                     android:textColor="?attr/colorOnSurfaceVariant"
                     android:textSize="14sp"
