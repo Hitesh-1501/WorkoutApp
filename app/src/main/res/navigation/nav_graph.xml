@@ -37,24 +37,28 @@
         android:id="@+id/welcomeCarouselFragment"
         android:name="com.example.auraFitAI.presentation.onboarding.WelcomeCarouselFragment"
         android:label="Welcome"
+        app:route="welcome"
         tools:layout="@layout/fragment_welcome_carousel" />
 
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.auraFitAI.presentation.auth.LoginFragment"
         android:label="Login"
+        app:route="login"
         tools:layout="@layout/fragment_login" />
 
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.auraFitAI.presentation.auth.SignUpFragment"
         android:label="Sign Up"
+        app:route="signup"
         tools:layout="@layout/fragment_sign_up" />
 
     <fragment
         android:id="@+id/onboardingFragment"
         android:name="com.example.auraFitAI.presentation.onboarding.OnboardingFragment"
         android:label="Onboarding"
+        app:route="onboarding"
         tools:layout="@layout/fragment_onboarding" />
 
 </navigation>
