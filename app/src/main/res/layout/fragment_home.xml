@@ -2,160 +2,139 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="@dimen/main_screeen_main_layout_padding"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorSurface">
+    android:background="?attr/colorSurface"
+    android:padding="20dp">
+
+    <!-- Header / Logout -->
+    <TextView
+        android:id="@+id/tvAppTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AuraFit AI"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btnLogout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnLogout" />
+
     <ImageView
         android:id="@+id/btnLogout"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:src="@android:drawable/ic_lock_power_off"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="Logout"
-        app:tint="@color/error_red"
-        app:layout_constraintTop_toTopOf="parent"
+        android:src="@android:drawable/ic_lock_power_off"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="8dp"
-        android:elevation="4dp"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/error_red" />
 
-    <ImageView
-        android:id="@+id/myImageView"
+    <!-- Hero Workout Banner Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardHero"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:contentDescription="@string/image"
-        android:src="@drawable/img_main_page"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/flStart"/>
+        android:layout_height="170dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/athletic_emerald"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvAppTitle">
 
-    <FrameLayout
-        android:id="@+id/flStart"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/tvHeroBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/glass_white_alpha20"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="TODAY'S SESSION"
+                android:textColor="@color/electric_lime"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvHeroTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="7-Minute Full Body"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/flStart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvHeroBadge" />
+
+            <TextView
+                android:id="@+id/tvHeroSubtitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="High intensity fat burn circuit"
+                android:textColor="@color/dark_on_surface_variant"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toStartOf="@+id/flStart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvHeroTitle" />
+
+            <FrameLayout
+                android:id="@+id/flStart"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/ic_circular_color_accent_border_ripple_background"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="Start Workout"
+                    android:src="@drawable/baseline_skip_next_24"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Section Title -->
+    <TextView
+        android:id="@+id/tvSectionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Workouts &amp; Tools"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardHero" />
+
+    <!-- RecyclerView for Categories & Tools -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvWorkouts"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myImageView"
-        android:background="@drawable/ic_circular_color_accent_border_ripple_background">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="START"
-            android:layout_gravity="center"
-            android:textColor="?attr/colorOnSurface"
-            android:textSize="@dimen/default_button_text_size"
-            android:textStyle="bold"/>
-
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/flBMI"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:background="@drawable/item_circular_color_accent_background"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/flHistory"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/flStart">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="BMI"
-            android:textColor="?attr/colorOnPrimary"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-    </FrameLayout>
-
-    <TextView
-        android:id="@+id/tvCalculator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Calculator"
-        android:textColor="?attr/colorPrimary"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/flBMI"
-        app:layout_constraintStart_toStartOf="@id/flBMI"
-        app:layout_constraintTop_toBottomOf="@id/flBMI" />
-
-    <FrameLayout
-        android:id="@+id/flHistory"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:background="@drawable/item_circular_color_accent_background"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/flStart"
-        app:layout_constraintStart_toEndOf="@id/flBMI"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/flShare"
-
-        >
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:src = "@drawable/baseline_history_24"
-            app:tint="?attr/colorOnPrimary"
-            />
-
-    </FrameLayout>
-
-    <TextView
-        android:id="@+id/tvHistory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="History"
-        android:textColor="?attr/colorPrimary"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/flHistory"
-        app:layout_constraintStart_toStartOf="@id/flHistory"
-        app:layout_constraintTop_toBottomOf="@id/flHistory" />
-
-    <FrameLayout
-        android:id="@+id/flShare"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:background="@drawable/item_circular_color_accent_background"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/flStart"
-        app:layout_constraintStart_toEndOf="@id/flHistory"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        >
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:src = "@drawable/baseline_share_24"
-            app:tint="?attr/colorOnPrimary"
-            />
-
-    </FrameLayout>
-
-    <TextView
-        android:id="@+id/tvShare"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Share"
-        android:textColor="?attr/colorPrimary"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/flShare"
-        app:layout_constraintStart_toStartOf="@id/flShare"
-        app:layout_constraintTop_toBottomOf="@id/flShare" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSectionTitle"
+        tools:listitem="@layout/item_home_workout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
