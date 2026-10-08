@@ -67,6 +67,8 @@ fun FloatingCurvedBottomBar(
         label = "navIndexAnimation"
     )
 
+    val shadowColor = if (isDark) Color.Black.copy(alpha = 0.6f) else Color.Black.copy(alpha = 0.15f)
+
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -78,7 +80,7 @@ fun FloatingCurvedBottomBar(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(72.dp)
-                .shadow(16.dp, RoundedCornerShape(36.dp), spotColor = Color.Black.copy(alpha = 0.15f))
+                .shadow(20.dp, RoundedCornerShape(36.dp), spotColor = shadowColor, ambientColor = shadowColor)
         ) {
             val width = size.width
             val height = size.height
@@ -123,6 +125,14 @@ fun FloatingCurvedBottomBar(
                 path = path,
                 color = surfaceColor
             )
+
+            if (isDark) {
+                drawPath(
+                    path = path,
+                    color = Color(0xFF00C99E).copy(alpha = 0.3f),
+                    style = androidx.compose.ui.graphics.drawscope.Stroke(width = 1.5.dp.toPx())
+                )
+            }
         }
 
         Row(
