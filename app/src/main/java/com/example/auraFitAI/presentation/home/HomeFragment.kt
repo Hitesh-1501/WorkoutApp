@@ -3,12 +3,9 @@ package com.example.auraFitAI.presentation.home
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
 import androidx.activity.OnBackPressedCallback
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.FragmentHomeBinding
 import com.example.auraFitAI.presentation.profile.BMIActivity
@@ -23,7 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private val binding by viewBinding(FragmentHomeBinding::bind)
-    private var directDownloadLink : String = "https://drive.google.com/file/d/1jpRUFgtFIC9i1rL4y6a6c8V2pRh65B2q/view?usp=sharing"
+    private val directDownloadLink: String = "https://drive.google.com/file/d/1jpRUFgtFIC9i1rL4y6a6c8V2pRh65B2q/view?usp=sharing"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,76 +31,98 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             }
         })
 
+        setupRecyclerView()
         setupClickListeners()
-        runEntranceAnimation()
+    }
+
+    private fun setupRecyclerView() {
+        val workoutItems = listOf(
+            HomeWorkoutItem(
+                id = 1,
+                title = "Full Body HIIT",
+                subtitle = "High intensity fat burn circuit",
+                duration = "7 Mins",
+                cardType = WorkoutCardType.WORKOUT,
+                iconRes = R.drawable.ic_aurafit_logo,
+                gradientColors = listOf(0xFF1B5E20, 0xFF00C99E)
+            ),
+            HomeWorkoutItem(
+                id = 2,
+                title = "Core & Abs Strength",
+                subtitle = "Strengthen midsection & stability",
+                duration = "7 Mins",
+                cardType = WorkoutCardType.WORKOUT,
+                iconRes = R.drawable.ic_goal,
+                gradientColors = listOf(0xFF02B290, 0xFF00A86B)
+            ),
+            HomeWorkoutItem(
+                id = 3,
+                title = "BMI Calculator",
+                subtitle = "Check your body mass index",
+                duration = "Tool",
+                cardType = WorkoutCardType.BMI,
+                iconRes = R.drawable.ic_height,
+                gradientColors = listOf(0xFF222531, 0xFF161820)
+            ),
+            HomeWorkoutItem(
+                id = 4,
+                title = "Workout History",
+                subtitle = "View completed fitness sessions",
+                duration = "Logs",
+                cardType = WorkoutCardType.HISTORY,
+                iconRes = R.drawable.baseline_history_24,
+                gradientColors = listOf(0xFF222531, 0xFF161820)
+            ),
+            HomeWorkoutItem(
+                id = 5,
+                title = "Share AuraFit AI",
+                subtitle = "Invite friends to workout together",
+                duration = "Social",
+                cardType = WorkoutCardType.SHARE,
+                iconRes = R.drawable.baseline_share_24,
+                gradientColors = listOf(0xFF222531, 0xFF161820)
+            )
+        )
+
+        val adapter = HomeWorkoutAdapter(workoutItems) { item ->
+            when (item.cardType) {
+                WorkoutCardType.WORKOUT -> {
+                    val intent = Intent(requireContext(), ExerciseActivity::class.java)
+                    startActivity(intent)
+                }
+                WorkoutCardType.BMI -> {
+                    val intent = Intent(requireContext(), BMIActivity::class.java)
+                    startActivity(intent)
+                }
+                WorkoutCardType.HISTORY -> {
+                    val intent = Intent(requireContext(), HistoryActivity::class.java)
+                    startActivity(intent)
+                }
+                WorkoutCardType.SHARE -> {
+                    shareAPK()
+                }
+            }
+        }
+
+        binding.rvWorkouts.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvWorkouts.adapter = adapter
     }
 
     private fun setupClickListeners() {
-        // Core Intent Navigation Loops - Updated to utilize fragment context
         binding.flStart.setOnClickListener {
             val intent = Intent(requireContext(), ExerciseActivity::class.java)
             startActivity(intent)
         }
 
-        binding.flBMI.setOnClickListener {
-            val intent = Intent(requireContext(), BMIActivity::class.java)
+        binding.cardHero.setOnClickListener {
+            val intent = Intent(requireContext(), ExerciseActivity::class.java)
             startActivity(intent)
-        }
-
-        binding.flHistory.setOnClickListener {
-            val intent = Intent(requireContext(), HistoryActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.flShare.setOnClickListener {
-            shareAPK()
         }
 
         binding.btnLogout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             findNavController().navigate(R.id.loginFragment)
         }
-    }
-
-    private fun runEntranceAnimation() {
-        // Initially hide interactive view models
-        setViewsVisibility(View.INVISIBLE)
-
-        // Load your structural fade_in XML asset configurations
-        // Note: Make sure R.anim.fade_in exists inside your res/anim directory
-        val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
-        fadeInAnimation.duration = 2000
-
-        // Start animation loop on dashboard header card
-        binding.myImageView.startAnimation(fadeInAnimation)
-
-        fadeInAnimation.setAnimationListener(object : Animation.AnimationListener {
-            override fun onAnimationStart(animation: Animation?) {}
-
-            override fun onAnimationEnd(animation: Animation?) {
-                // Smoothly toggle metrics visible once background image process completes
-                setViewsVisibility(View.VISIBLE)
-
-                // Animate secondary button arrivals concurrently
-                val secondaryFade = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
-                binding.flStart.startAnimation(secondaryFade)
-                binding.flBMI.startAnimation(secondaryFade)
-                binding.flHistory.startAnimation(secondaryFade)
-                binding.flShare.startAnimation(secondaryFade)
-            }
-
-            override fun onAnimationRepeat(animation: Animation?) {}
-        })
-    }
-
-    private fun setViewsVisibility(visibility: Int) {
-        binding.flStart.visibility = visibility
-        binding.flBMI.visibility = visibility
-        binding.flHistory.visibility = visibility
-        binding.flShare.visibility = visibility
-        binding.tvHistory.visibility = visibility
-        binding.tvCalculator.visibility = visibility
-        binding.tvShare.visibility = visibility
     }
 
     private fun shareAPK() {
@@ -115,5 +134,4 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
         startActivity(Intent.createChooser(shareIntent, "Share via"))
     }
-
 }
