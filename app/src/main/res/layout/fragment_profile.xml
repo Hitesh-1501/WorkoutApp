@@ -1,166 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     android:background="?attr/colorSurface"
-    android:fillViewport="true">
+    android:padding="24dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:paddingBottom="100dp">
+        android:text="User Profile"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnSurface"/>
 
-        <TextView
-            android:id="@+id/tvProfileTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="User Profile"
-            android:textColor="?attr/colorOnSurface"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="View biometrics, account settings, and logout."
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textColor="?attr/colorOnSurfaceVariant"/>
 
-        <TextView
-            android:id="@+id/tvProfileSubtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Manage your fitness account &amp; statistics"
-            android:textColor="?attr/colorOnSurfaceVariant"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvProfileTitle" />
-
-        <!-- Profile Header Card -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardProfileHeader"
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_marginTop="20dp"
-            app:cardBackgroundColor="@color/athletic_emerald"
-            app:cardCornerRadius="28dp"
-            app:cardElevation="2dp"
-            app:strokeWidth="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvProfileSubtitle">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="20dp">
-
-                <ImageView
-                    android:id="@+id/ivUserAvatar"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/item_circular_color_gray_background"
-                    android:contentDescription="User Avatar"
-                    android:padding="12dp"
-                    android:src="@drawable/ic_user"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/electric_lime" />
-
-                <TextView
-                    android:id="@+id/tvUserName"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="AuraFit Athlete"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/ivUserAvatar"
-                    app:layout_constraintTop_toTopOf="@+id/ivUserAvatar" />
-
-                <TextView
-                    android:id="@+id/tvUserEmail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
-                    android:text="member@aurafit.ai"
-                    android:textColor="@color/dark_on_surface_variant"
-                    android:textSize="13sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/ivUserAvatar"
-                    app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Option 1: BMI Calculator -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardOptionBmi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="?attr/colorSurfaceVariant"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="1dp"
-            app:strokeWidth="1dp"
-            app:strokeColor="@color/borderStroke"
-            app:layout_constraintTop_toBottomOf="@+id/cardProfileHeader">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="20dp"
-                android:text="📊  BMI Calculator &amp; Metrics"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Option 2: Workout History -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardOptionHistory"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:cardBackgroundColor="?attr/colorSurfaceVariant"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="1dp"
-            app:strokeWidth="1dp"
-            app:strokeColor="@color/borderStroke"
-            app:layout_constraintTop_toBottomOf="@+id/cardOptionBmi">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="20dp"
-                android:text="📅  Workout History &amp; Logs"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Option 3: Logout -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardOptionLogout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:cardBackgroundColor="?attr/colorSurfaceVariant"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="1dp"
-            app:strokeWidth="1dp"
-            app:strokeColor="@color/borderStroke"
-            app:layout_constraintTop_toBottomOf="@+id/cardOptionHistory">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="20dp"
-                android:text="🚪  Log Out of Account"
-                android:textColor="@color/error_red"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </com.google.android.material.card.MaterialCardView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+</LinearLayout>
