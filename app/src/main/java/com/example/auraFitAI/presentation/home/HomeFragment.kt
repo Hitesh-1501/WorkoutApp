@@ -105,8 +105,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val adapter = HomeWorkoutAdapter(workoutItems) { item ->
             when (item.cardType) {
                 WorkoutCardType.WORKOUT -> {
-                    val intent = Intent(requireContext(), ExerciseActivity::class.java)
-                    startActivity(intent)
+                    showWorkoutSettingsDialog()
                 }
                 WorkoutCardType.BMI -> {
                     val intent = Intent(requireContext(), BMIActivity::class.java)
@@ -128,19 +127,46 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun setupClickListeners() {
         binding.flStart.setOnClickListener {
-            val intent = Intent(requireContext(), ExerciseActivity::class.java)
-            startActivity(intent)
+            showWorkoutSettingsDialog()
         }
 
         binding.cardHero.setOnClickListener {
-            val intent = Intent(requireContext(), ExerciseActivity::class.java)
-            startActivity(intent)
+            showWorkoutSettingsDialog()
         }
 
         binding.btnLogout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             findNavController().navigate(R.id.loginFragment)
         }
+    }
+
+    private fun showWorkoutSettingsDialog() {
+        val dialog = android.app.Dialog(requireContext())
+        val dialogBinding = com.example.auraFitAI.databinding.DialogWorkoutSettingsBinding.inflate(layoutInflater)
+        dialog.setContentView(dialogBinding.root)
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+        dialogBinding.btnStartCustomWorkout.setOnClickListener {
+            val restTime = when (dialogBinding.rgRestTime.checkedRadioButtonId) {
+                R.id.rbRest10 -> 10L
+                R.id.rbRest15 -> 15L
+                else -> 5L
+            }
+            val exTime = when (dialogBinding.rgExerciseTime.checkedRadioButtonId) {
+                R.id.rbEx45 -> 45L
+                R.id.rbEx60 -> 60L
+                else -> 30L
+            }
+
+            dialog.dismiss()
+            val intent = Intent(requireContext(), ExerciseActivity::class.java).apply {
+                putExtra("REST_TIME_KEY", restTime)
+                putExtra("EXERCISE_TIME_KEY", exTime)
+            }
+            startActivity(intent)
+        }
+
+        dialog.show()
     }
 
     private fun shareAPK() {
