@@ -5,8 +5,10 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.activity.OnBackPressedCallback
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.auraFitAI.R
+import com.example.auraFitAI.presentation.WorkOutApplication
 import com.example.auraFitAI.databinding.FragmentHomeBinding
 import com.example.auraFitAI.presentation.profile.BMIActivity
 import com.example.auraFitAI.presentation.profile.HistoryActivity
@@ -15,6 +17,7 @@ import com.example.auraFitAI.presentation.workout.ExerciseActivity
 import com.google.firebase.auth.FirebaseAuth
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home) {
@@ -33,6 +36,21 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         setupRecyclerView()
         setupClickListeners()
+        observeWorkoutStats()
+    }
+
+    private fun observeWorkoutStats() {
+        val historyDao = (requireActivity().application as WorkOutApplication).db.historyDao()
+        viewLifecycleOwner.lifecycleScope.launch {
+            historyDao.fetchAllDates().collect { historyList ->
+                val totalWorkouts = historyList.size
+                binding.tvTotalWorkouts.text = totalWorkouts.toString()
+
+                // Simple streak approximation based on total completed sessions
+                val streak = if (totalWorkouts > 0) "${totalWorkouts} Days" else "0 Days"
+                binding.tvStreakCount.text = streak
+            }
+        }
     }
 
     private fun setupRecyclerView() {
