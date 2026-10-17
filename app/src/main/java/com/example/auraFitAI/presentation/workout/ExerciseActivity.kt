@@ -58,6 +58,9 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
 
+        restTimerDuration = intent.getLongExtra("REST_TIME_KEY", 5)
+        exerciseTimerDuration = intent.getLongExtra("EXERCISE_TIME_KEY", 30)
+
         binding?.toolbarExercise?.setNavigationOnClickListener {
             customDialogForBackButton()
         }
@@ -227,13 +230,14 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
      */
     private fun setResetProgressBar(){
 
+        binding?.progressBar?.max = restTimerDuration.toInt()
         binding?.progressBar?.progress = restProgress // Sets the current progress to the specified value.
         // Here we have started a timer of 10 seconds so the 10000 is milliseconds is 10 seconds and the countdown interval is 1 second so it 1000.
         restTimer = object : CountDownTimer(restTimerDuration*1000,1000){
             override fun onTick(millisUntilFinished: Long) {
                 restProgress++ // It is increased by 1
-                binding?.progressBar?.progress = 5 - restProgress // Indicates progress bar progress
-                binding?.tvTimer?.text = (5 - restProgress).toString() // Current progress is set to text view in terms of seconds.
+                binding?.progressBar?.progress = (restTimerDuration - restProgress).toInt() // Indicates progress bar progress
+                binding?.tvTimer?.text = (restTimerDuration - restProgress).toString() // Current progress is set to text view in terms of seconds.
             }
 
             override fun onFinish() {
@@ -284,12 +288,13 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
      * Function is used to set the progress of the timer using the progress for Exercise View for 30 Seconds
      */
     private fun setExerciseProgressBar(){
+        binding?.progressBarExercise?.max = exerciseTimerDuration.toInt()
         binding?.progressBarExercise?.progress = exerciseProgress
         exerciseTimer = object : CountDownTimer(exerciseTimerDuration*1000,1000){
             override fun onTick(millisUntilFinished: Long) {
                 exerciseProgress++ // It is increased by 1
-                binding?.progressBarExercise?.progress = 30 - exerciseProgress // Indicates progress bar progress
-                binding?.tvTimerExercise?.text = (30 - exerciseProgress).toString() // Current progress is set to text view in terms of seconds.
+                binding?.progressBarExercise?.progress = (exerciseTimerDuration - exerciseProgress).toInt() // Indicates progress bar progress
+                binding?.tvTimerExercise?.text = (exerciseTimerDuration - exerciseProgress).toString() // Current progress is set to text view in terms of seconds.
             }
 
             override fun onFinish() {
