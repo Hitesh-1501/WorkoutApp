@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.auraFitAI.R
 import com.example.auraFitAI.databinding.FragmentProfileBinding
 import com.example.auraFitAI.presentation.util.viewBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -29,6 +30,16 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         binding.cardOptionHistory.setOnClickListener {
             startActivity(Intent(requireContext(), HistoryActivity::class.java))
+        }
+
+        binding.cardOptionSettings.setOnClickListener {
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle("App Settings & Preferences")
+                .setMessage("• App Version: 1.0 (AuraFit AI)\n• Text-to-Speech Voice Prompts: Enabled\n• Notification Reminders: Active\n• Database: Room & Firebase Firestore Sync")
+                .setPositiveButton("Close") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                .show()
         }
 
         binding.cardOptionLogout.setOnClickListener {
