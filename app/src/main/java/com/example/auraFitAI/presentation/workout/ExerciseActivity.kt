@@ -218,8 +218,9 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
             // Here we have set the upcoming exercise name to the text view
             // Here as the current position is -1 by default so to selected from the list it should be 0 so we have increased it by +1.
-            binding?.tvUpcomingExerciseName?.text =
-                exerciseList!![currentExercisePosition + 1].getName()
+            val upcomingName = exerciseList!![currentExercisePosition + 1].getName()
+            binding?.tvUpcomingExerciseName?.text = upcomingName
+            speakOut("Rest. Get ready for $upcomingName")
 
             // This function is used to set the progress details.
             setResetProgressBar()
