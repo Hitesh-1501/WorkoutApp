@@ -139,7 +139,30 @@
                 android:textStyle="bold" />
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Option 3: Logout -->
+        <!-- Option 3: App Settings -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardOptionSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="?attr/colorSurfaceVariant"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="1dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/borderStroke"
+            app:layout_constraintTop_toBottomOf="@+id/cardOptionHistory">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="⚙️  App Settings &amp; Preferences"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Option 4: Logout -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardOptionLogout"
             android:layout_width="match_parent"
@@ -150,7 +173,7 @@
             app:cardElevation="1dp"
             app:strokeWidth="1dp"
             app:strokeColor="@color/borderStroke"
-            app:layout_constraintTop_toBottomOf="@+id/cardOptionHistory">
+            app:layout_constraintTop_toBottomOf="@+id/cardOptionSettings">
 
             <TextView
                 android:layout_width="match_parent"
