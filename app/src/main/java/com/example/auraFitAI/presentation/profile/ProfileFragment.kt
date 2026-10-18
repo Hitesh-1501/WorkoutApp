@@ -1,10 +1,8 @@
 package com.example.auraFitAI.presentation.profile
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.auraFitAI.R
@@ -31,20 +29,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         binding.cardOptionHistory.setOnClickListener {
             startActivity(Intent(requireContext(), HistoryActivity::class.java))
-        }
-
-        binding.cardOptionTheme.setOnClickListener {
-            val themes = arrayOf("Light Mode", "Dark Mode", "System Default")
-            AlertDialog.Builder(requireContext())
-                .setTitle("Choose Theme Mode")
-                .setItems(themes) { _, which ->
-                    when (which) {
-                        0 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                        1 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                        2 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-                    }
-                }
-                .show()
         }
 
         binding.cardOptionLogout.setOnClickListener {
