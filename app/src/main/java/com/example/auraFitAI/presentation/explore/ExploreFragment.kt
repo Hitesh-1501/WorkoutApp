@@ -26,5 +26,11 @@ class ExploreFragment : Fragment(R.layout.fragment_explore) {
         binding.cardCategoryCardio.setOnClickListener {
             startActivity(Intent(requireContext(), ExerciseActivity::class.java))
         }
+        binding.cardCategoryUpper.setOnClickListener {
+            startActivity(Intent(requireContext(), ExerciseActivity::class.java))
+        }
+        binding.cardCategoryLower.setOnClickListener {
+            startActivity(Intent(requireContext(), ExerciseActivity::class.java))
+        }
     }
 }
