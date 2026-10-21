@@ -10,7 +10,10 @@ import com.example.auraFitAI.data.local.HistoryDao
 import com.example.auraFitAI.data.local.HistoryEntity
 import com.example.auraFitAI.databinding.ActivityFinishBinding
 import com.example.auraFitAI.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -58,9 +61,29 @@ class FinishActivity : AppCompatActivity() {
         val date = sdf.format(dateTime)
         Log.e("Formatted Date : ", "" + date)
 
+        val uid = FirebaseAuth.getInstance().currentUser?.uid
+
         lifecycleScope.launch {
             historyDao.insert(HistoryEntity(date))
-            Log.e("Date : ", "Added...")
+            Log.e("Date : ", "Added locally to Room...")
+
+            if (uid != null) {
+                try {
+                    val workoutRecord = hashMapOf(
+                        "date" to date,
+                        "timestamp" to System.currentTimeMillis()
+                    )
+                    FirebaseFirestore.getInstance()
+                        .collection("users")
+                        .document(uid)
+                        .collection("workouts")
+                        .add(workoutRecord)
+                        .await()
+                    Log.e("Firestore", "Workout synced successfully to cloud")
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
         }
     }
 
