@@ -15,14 +15,12 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class WelcomeCarouselFragment : Fragment(R.layout.fragment_welcome_carousel) {
-
     private val binding by viewBinding(FragmentWelcomeCarouselBinding::bind)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupViewPager()
     }
-
     private fun setupViewPager() {
         val slides = listOf(
             OnboardingSlide(R.drawable.img_onboarding_1, "Your Fitness,\nYour Way", "Fitness", "Personalized workouts and plans\njust for you."),
